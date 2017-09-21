@@ -8,7 +8,7 @@ import { SingleProjectComponent } from './components/single-project/single-proje
 
 const routes: Routes = [
   {
-    path: 'projects',
+    path: 'projekti',
     component: ProjectsComponent,
   },
   {
@@ -16,11 +16,11 @@ const routes: Routes = [
     component: ProjectsComponent,
   },
   {
-    path: 'about',
+    path: 'biografija',
     component: AboutComponent,
   },
   {
-    path: 'projects/:slug',
+    path: 'projekti/:slug',
     component: SingleProjectComponent,
   },
   {

@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutWrap fxLayout.xs="column" fxLayoutAlign="space-between center" class='projects-container'>
+<div fxLayout="row" fxLayoutWrap fxLayout.xs="column" fxLayoutAlign="space-around center" class='projects-container'>
   <md-card  fxFlex.xs='1 1 100%' fxFlex.gt-xs='1 1 100%' fxFlex.gt-sm='1 1 40%' fxFlex.gt-md='1 1 25%' class="projects" *ngFor='let project of projects'>
     <md-card-header>
       <md-card-title>{{project.name}}</md-card-title>
@@ -11,7 +11,7 @@
       </p>
     </md-card-content>
     <md-card-actions>
-      <button md-button [routerLink]="['/projects', project.slug]">DETALJNIJE</button>
+      <button md-button [routerLink]="['/projekti', project.slug]">DETALJNIJE</button>
     </md-card-actions>
   </md-card>
 </div>

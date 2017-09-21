@@ -1,6 +1,8 @@
 .avatar-image {
   background-image: url('../../../assets/images/jgs-300x300.jpg');
   background-size: cover;
+  height: 80px;
+  width: 80px;
 }
 .mat-expansion-panel-header{
   font-size:20px;
@@ -13,4 +15,10 @@ hr{
 }
 .mat-card-title {
   font-size: 16px;
+}
+.mat-card-header{
+  align-items: center;
+}
+.mat-card-content{
+  margin-top: 20px;
 }

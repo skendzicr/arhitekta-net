@@ -1,7 +1,7 @@
 export const HOME_LABEL = 'Projekti';
-export const HOME_PATH = 'projects';
-export const ABOUT_LABEL = 'Arhitekta';
-export const ABOUT_PATH = 'about';
+export const HOME_PATH = 'projekti';
+export const ABOUT_LABEL = 'Biografija';
+export const ABOUT_PATH = 'biografija';
 export const WORK_EXPERIENCE: Experience[] = [
   {
     year: '2011 do sad',

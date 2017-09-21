@@ -13,4 +13,8 @@
   <md-card>
     <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
   </md-card>
+  <div>
+    <button md-button [routerLink]="['/projekti', prev]">Prethodni</button>
+    <button md-button [routerLink]="['/projekti', next]">Sledeći</button>
+  </div>
 </div>

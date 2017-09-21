@@ -10,11 +10,15 @@ import { AppComponent } from './app.component';
 
 import { ProjectsService } from './shared/projects.service';
 
+import { NgxGalleryModule } from 'ngx-gallery';
+
 import {
   MdCardModule,
   MdButtonModule,
   MdIconModule,
-  MdTabsModule
+  MdTabsModule,
+  MdExpansionModule,
+  MdListModule
 } from '@angular/material';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -22,6 +26,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ProjectsComponent } from './components/projects/projects.component';
 import { AboutComponent } from './components/about/about.component';
+import { SingleProjectComponent } from './components/single-project/single-project.component';
 
 
 @NgModule({
@@ -29,6 +34,7 @@ import { AboutComponent } from './components/about/about.component';
     AppComponent,
     ProjectsComponent,
     AboutComponent,
+    SingleProjectComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -40,6 +46,8 @@ import { AboutComponent } from './components/about/about.component';
     MdIconModule,
     MdButtonModule,
     MdTabsModule,
+    MdExpansionModule,
+    NgxGalleryModule
   ],
   providers: [ProjectsService],
   bootstrap: [AppComponent]

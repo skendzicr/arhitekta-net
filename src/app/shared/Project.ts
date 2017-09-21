@@ -5,4 +5,5 @@ export interface Project {
   description: string;
   name: string;
   category: string;
+  slug: string;
 }

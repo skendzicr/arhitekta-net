@@ -3,6 +3,6 @@
 html {
   height: 90%;
 }
-body {
-  height: 100%;
+.mat-sidenav-container, .mat-sidenav-content, .mat-tab-body-content {
+  transform: none !important;
 }

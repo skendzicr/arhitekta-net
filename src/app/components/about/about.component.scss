@@ -1,0 +1,16 @@
+.avatar-image {
+  background-image: url('../../../assets/images/jgs-300x300.jpg');
+  background-size: cover;
+}
+.mat-expansion-panel-header{
+  font-size:20px;
+}
+.mat-expansion-panel-header-description{
+  justify-content: flex-end;
+}
+hr{
+  border-top-color: rgba(0,0,0,0.12);
+}
+.mat-card-title {
+  font-size: 16px;
+}

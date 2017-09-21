@@ -9,7 +9,7 @@ import * as LINKS from './shared/constants';
 })
 export class AppComponent implements OnInit {
   navLinks = [];
-  showOverlay = true;
+  showOverlay = false;
   constructor(private router: Router) {
   }
   ngOnInit() {

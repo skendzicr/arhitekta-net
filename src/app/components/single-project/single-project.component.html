@@ -1,3 +1,16 @@
-<p>
-  {{project.slug}}
-</p>
+<div fxLayout="column" fxLayoutAlign="center center">
+  <md-card>
+    <md-card-header>
+      <md-card-title>{{project.name}}</md-card-title>
+      <md-card-subtitle>{{project.category}}</md-card-subtitle>
+    </md-card-header>
+    <md-card-content>
+      <div>
+        {{project.description}}
+      </div>
+    </md-card-content>
+  </md-card>
+  <md-card>
+    <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+  </md-card>
+</div>

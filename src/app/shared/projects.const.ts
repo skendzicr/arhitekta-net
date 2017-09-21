@@ -1,4 +1,4 @@
-import {Project} from './project';
+import { Project } from './project';
 
 export const PROJECTS: Project[] =
   [
@@ -7,13 +7,47 @@ export const PROJECTS: Project[] =
       name: 'StartIT centar Inđija',
       image: '../../assets/images/start-it-indjija-4.jpg',
       images: [
-        '../../assets/images/start-it-indjija-1.jpg',
-        '../../assets/images/start-it-indjija-2.jpg',
-        '../../assets/images/start-it-indjija-3.jpg',
-        '../../assets/images/start-it-indjija-4.jpg',
-        '../../assets/images/start-it-indjija-5.jpg',
-        '../../assets/images/start-it-indjija-6.jpg',
-        '../../assets/images/start-it-indjija-7.jpg',
+        {
+          big: '../../assets/images/start-it-indjija-1.jpg',
+          medium: '../../assets/images/start-it-indjija-1.jpg',
+          small: '../../assets/images/start-it-indjija-1.jpg',
+        },
+        {
+          big: '../../assets/images/start-it-indjija-2.jpg',
+          medium: '../../assets/images/start-it-indjija-2.jpg',
+          small: '../../assets/images/start-it-indjija-2.jpg',
+
+        },
+        {
+          big: '../../assets/images/start-it-indjija-3.jpg',
+          medium: '../../assets/images/start-it-indjija-3.jpg',
+          small: '../../assets/images/start-it-indjija-3.jpg',
+
+        },
+        {
+          big: '../../assets/images/start-it-indjija-4.jpg',
+          medium: '../../assets/images/start-it-indjija-4.jpg',
+          small: '../../assets/images/start-it-indjija-4.jpg',
+
+        },
+        {
+          big: '../../assets/images/start-it-indjija-5.jpg',
+          medium: '../../assets/images/start-it-indjija-5.jpg',
+          small: '../../assets/images/start-it-indjija-5.jpg',
+
+        },
+        {
+          big: '../../assets/images/start-it-indjija-6.jpg',
+          medium: '../../assets/images/start-it-indjija-6.jpg',
+          small: '../../assets/images/start-it-indjija-6.jpg',
+
+        },
+        {
+          big: '../../assets/images/start-it-indjija-7.jpg',
+          medium: '../../assets/images/start-it-indjija-7.jpg',
+          small: '../../assets/images/start-it-indjija-7.jpg',
+
+        }
       ],
       // tslint:disable-next-line:max-line-length
       description: `Startit Centar Indjija je zamišljen kao coworking prostor za umrežavanje, saradnju i razmenu prakse i znanja. Startit Centar Inđija je prostor od 250m2 u samom centru grada i nalazi se u “inđijskoj Knez Mihajlovoj” — Vojvode Stepe 4. Centar je prvi projekat koji je finansiran donacijama iz Kickstarter kampanje koju je izgurala domaća IT zajednica.`,

@@ -1,13 +1,11 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, Params, Router, Routes } from '@angular/router';
 import * as LINKS from './shared/constants';
-import { slideToTop } from './animations/router-transition';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [slideToTop],
 })
 export class AppComponent implements OnInit {
   navLinks = [];
@@ -20,9 +18,6 @@ export class AppComponent implements OnInit {
       {label: LINKS.ABOUT_LABEL, path: LINKS.ABOUT_PATH },
       {label: LINKS.CONTACT_LABEL, path: LINKS.CONTACT_PATH }
     ];
-  }
-  getRouteAnimation(outlet) {
-    return outlet.activatedRouteData.animation;
   }
   toggleOverlay() {
     this.showOverlay = !this.showOverlay;

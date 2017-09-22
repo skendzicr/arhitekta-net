@@ -4,7 +4,7 @@ export const ABOUT_LABEL = 'Biografija';
 export const ABOUT_PATH = 'biografija';
 export const CONTACT_LABEL = 'Kontakt';
 export const CONTACT_PATH = 'kontakt';
-export const BASE_URL = 'http://localhost:4200/';
+export const BASE_URL = 'http://www.arhitekta.net/';
 export const SITE_NAME = '| Arhitekta.net';
 
 export const DEFAULT_META_TITLE = 'Arhitekta.net';

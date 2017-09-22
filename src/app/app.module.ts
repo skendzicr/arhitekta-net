@@ -7,8 +7,10 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { BASE_URL } from './shared/constants';
 
 import { ProjectsService } from './shared/projects.service';
+import { MetaDataService } from './services/meta-data.service';
 
 import { NgxGalleryModule } from 'ngx-gallery';
 
@@ -51,7 +53,7 @@ import { ContactComponent } from './components/contact/contact.component';
     MdExpansionModule,
     NgxGalleryModule
   ],
-  providers: [ProjectsService],
+  providers: [ProjectsService, MetaDataService, { provide: 'BaseURL', useValue: BASE_URL }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

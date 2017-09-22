@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { appearFromLeft } from '../../animations/router-transition';
+import { MetaDataService } from '../../services/meta-data.service';
+import {DEFAULT_META_DESCRIPTION} from '../../shared/constants';
 
 @Component({
   selector: 'app-contact',
@@ -13,9 +15,10 @@ import { appearFromLeft } from '../../animations/router-transition';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private meta: MetaDataService) { }
 
   ngOnInit() {
+    this.meta.createMetaData(`${DEFAULT_META_DESCRIPTION} Kontakt: +381 (0) 63 8683394`, 'Kontakt');
   }
 
 }

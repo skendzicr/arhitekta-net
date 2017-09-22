@@ -5,6 +5,8 @@ a {
     color: black!important;
   }
 }
-md-card{
-  width: 30%;
+@media screen and (min-width: 1024px) {
+  md-card {
+      width: 30%;
+  }
 }

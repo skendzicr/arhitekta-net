@@ -4,6 +4,16 @@ export const ABOUT_LABEL = 'Biografija';
 export const ABOUT_PATH = 'biografija';
 export const CONTACT_LABEL = 'Kontakt';
 export const CONTACT_PATH = 'kontakt';
+export const BASE_URL = 'http://localhost:4200/';
+export const SITE_NAME = '| Arhitekta.net';
+
+export const DEFAULT_META_TITLE = 'Arhitekta.net';
+export const DEFAULT_META_DESCRIPTION = 'Od 3d modela do glavnog projekta.';
+export const DEFAULT_META_URL = BASE_URL;
+export const DEFAULT_META_IMAGE = `${BASE_URL}assets/images/start-it-indjija-4.jpg`;
+export const DEFAULT_BIOGRAFY_META = `Jelena Gutić Skendžić - Diplomirani inženjer arhitekture.
+Obrazovanje stekla na Arhitektonskom fakultetu Univerziteta u Beogradu na smeru Arhitektonsko inženjerstvo. Poseduje licencu 300
+/ Odgovorni projektant arhitektonskih projekata, uređenja slobodnih prostora i unutrašnjih instalacija vodovoda i kanalizacije`;
 
 export const WORK_EXPERIENCE: Experience[] = [
   {

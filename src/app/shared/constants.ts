@@ -2,6 +2,9 @@ export const HOME_LABEL = 'Projekti';
 export const HOME_PATH = 'projekti';
 export const ABOUT_LABEL = 'Biografija';
 export const ABOUT_PATH = 'biografija';
+export const CONTACT_LABEL = 'Kontakt';
+export const CONTACT_PATH = 'kontakt';
+
 export const WORK_EXPERIENCE: Experience[] = [
   {
     year: '2011 do sad',

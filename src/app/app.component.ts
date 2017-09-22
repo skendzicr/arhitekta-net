@@ -15,7 +15,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.navLinks = [
       {label: LINKS.HOME_LABEL, path: LINKS.HOME_PATH },
-      {label: LINKS.ABOUT_LABEL, path: LINKS.ABOUT_PATH }
+      {label: LINKS.ABOUT_LABEL, path: LINKS.ABOUT_PATH },
+      {label: LINKS.CONTACT_LABEL, path: LINKS.CONTACT_PATH }
     ];
   }
   toggleOverlay() {

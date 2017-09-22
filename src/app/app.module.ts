@@ -27,6 +27,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { AboutComponent } from './components/about/about.component';
 import { SingleProjectComponent } from './components/single-project/single-project.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { SingleProjectComponent } from './components/single-project/single-proje
     ProjectsComponent,
     AboutComponent,
     SingleProjectComponent,
+    ContactComponent,
   ],
   imports: [
     AppRoutingModule,

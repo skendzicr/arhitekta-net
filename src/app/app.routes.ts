@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { AboutComponent } from './components/about/about.component';
 import { SingleProjectComponent } from './components/single-project/single-project.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'biografija',
     component: AboutComponent,
+  },
+  {
+    path: 'kontakt',
+    component: ContactComponent,
   },
   {
     path: 'projekti/:slug',

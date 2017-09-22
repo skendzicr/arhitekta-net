@@ -9,29 +9,30 @@ import { ContactComponent } from './components/contact/contact.component';
 
 const routes: Routes = [
   {
-    path: 'projekti',
-    component: ProjectsComponent,
+    path: '',
+    redirectTo: 'projekti',
+    pathMatch: 'full'
   },
   {
-    path: '',
+    path: 'projekti',
     component: ProjectsComponent,
+    data: { animation: 'projekti' }
   },
   {
     path: 'biografija',
     component: AboutComponent,
+    data: { animation: 'biografija' }
   },
   {
     path: 'kontakt',
     component: ContactComponent,
+    data: { animation: 'kontakt' }
   },
   {
     path: 'projekti/:slug',
     component: SingleProjectComponent,
-  },
-  {
-    path: '**',
-    component: ProjectsComponent,
-  },
+    data: { animation: 'projekat' }
+  }
 ];
 
 @NgModule({

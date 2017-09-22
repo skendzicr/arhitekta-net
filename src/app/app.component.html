@@ -24,6 +24,6 @@
     {{link.label}}
   </a>
 </nav>
-
-  <router-outlet *ngIf='!showOverlay'></router-outlet>
-
+<!-- <div [@routerTransition]='getRouteAnimation(route)'> -->
+  <router-outlet #route="outlet"></router-outlet>
+<!-- </div> -->

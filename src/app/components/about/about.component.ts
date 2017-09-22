@@ -1,10 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import {WORK_EXPERIENCE, REFERENCE_LIST} from '../../shared/constants';
+import { Component, OnInit, HostBinding } from '@angular/core';
+import { WORK_EXPERIENCE, REFERENCE_LIST } from '../../shared/constants';
+import { appearFromBottom } from '../../animations/router-transition';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  styleUrls: ['./about.component.scss'],
+  animations: [appearFromBottom],
+  // tslint:disable-next-line:use-host-property-decorator
+  host: {
+    '[@transitionTrigger]': ''
+  }
 })
 export class AboutComponent implements OnInit {
   jobs = WORK_EXPERIENCE;

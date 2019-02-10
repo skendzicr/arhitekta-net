@@ -4,6 +4,9 @@ mat-card {
 
 nav {
     text-align: center;
+    .mat-tab-links {
+        justify-content: center;
+    }
 }
 
 .outlet-wrapper {

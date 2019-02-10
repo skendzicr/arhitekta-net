@@ -181,7 +181,7 @@ export const PROJECTS: Project[] = [
     slug: 'dizajn-namestaja'
   },
   {
-    id: 5,
+    id: 4,
     name: 'Kolektivno stanovanje',
     image: 'assets/images/construction-building-concept-3.jpg',
     images: [
@@ -207,7 +207,7 @@ export const PROJECTS: Project[] = [
     slug: 'kolektivno-stanovanje-lazarevac'
   },
   {
-    id: 6,
+    id: 5,
     name: 'Idejno rešenje kuće za odmor',
     image: 'assets/images/resting-house-concept-1.jpg',
     images: [
@@ -228,7 +228,7 @@ export const PROJECTS: Project[] = [
     slug: 'kuca-za-odmor-koncept'
   },
   {
-    id: 7,
+    id: 6,
     name: 'Uređenje stana',
     image: 'assets/images/enterior-design-1.jpg',
     images: [

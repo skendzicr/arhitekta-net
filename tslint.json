@@ -19,7 +19,6 @@
     "import-blacklist": [
       true,
       "rxjs/Rx",
-      "rxjs/operators"
     ],
     "import-spacing": true,
     "indent": [

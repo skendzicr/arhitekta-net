@@ -1,9 +1,8 @@
-import { Component, OnInit, HostBinding, Inject } from '@angular/core';
-import { WORK_EXPERIENCE, REFERENCE_LIST } from '../../shared/constants';
+import { Component, OnInit, Inject } from '@angular/core';
+import { WORK_EXPERIENCE, REFERENCE_LIST, DEFAULT_BIOGRAFY_META } from '../../shared/constants';
 import { appearFromBottom } from '../../animations/router-transition';
 import { MetaDataService } from '../../services/meta-data.service';
 import { ActivatedRoute } from '@angular/router';
-import { DEFAULT_BIOGRAFY_META } from '../../shared/constants';
 
 @Component({
   selector: 'app-about',

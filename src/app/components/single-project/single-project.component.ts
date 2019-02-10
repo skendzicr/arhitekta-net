@@ -1,12 +1,15 @@
+import { switchMap, map } from 'rxjs/operators';
 import { Component, OnInit, Inject } from '@angular/core';
 import { Project } from '../../shared/Project';
 import { ProjectsService } from '../../shared/projects.service';
 import { ActivatedRoute, Params } from '@angular/router';
-import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
+import {
+  NgxGalleryOptions,
+  NgxGalleryImage,
+} from 'ngx-gallery';
 import { GALLERY_OPTIONS } from '../../shared/gallery.constants';
 import { MetaDataService } from '../../services/meta-data.service';
-import { Observable, of, from } from 'rxjs';
-import {switchMap, map} from 'rxjs/operators';
+import { of } from 'rxjs';
 
 
 @Component({
@@ -26,10 +29,12 @@ export class SingleProjectComponent implements OnInit {
     private projectsService: ProjectsService,
     private route: ActivatedRoute,
     private meta: MetaDataService
-  ) { }
+  ) {}
 
   ngOnInit() {
-    this.project = this.projectsService.getProject(this.route.snapshot.paramMap.get('slug'));
+    this.project = this.projectsService.getProject(
+      this.route.snapshot.paramMap.get('slug')
+    );
     this.meta.createMetaData(
       this.project.description,
       this.project.name,
@@ -40,10 +45,12 @@ export class SingleProjectComponent implements OnInit {
     this.galleryImages = this.project.images;
     this.slugs = this.projectsService.getSlugs();
 
-    this.route.params.pipe(
-      switchMap((params: Params) => of(this.projectsService.getProject(params.slug))),
-      map(
-        project => {
+    this.route.params
+      .pipe(
+        switchMap((params: Params) =>
+          of(this.projectsService.getProject(params.slug))
+        ),
+        map(project => {
           this.project = project;
           this.meta.createMetaData(
             this.project.description,
@@ -53,10 +60,9 @@ export class SingleProjectComponent implements OnInit {
           );
           this.galleryImages = project.images;
           this.setPrevNext(project.id);
-        }
+        })
       )
-    ).subscribe();
-
+      .subscribe();
   }
 
   setPrevNext(projectId: number) {
@@ -70,6 +76,8 @@ export class SingleProjectComponent implements OnInit {
     }
 
     this.prev = this.slugs[prevIndex - 1].slug;
-    this.next = this.slugs[nextIndex + 1] ? this.slugs[nextIndex + 1].slug : this.slugs[0].slug ;
+    this.next = this.slugs[nextIndex + 1]
+      ? this.slugs[nextIndex + 1].slug
+      : this.slugs[0].slug;
   }
 }

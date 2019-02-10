@@ -1,0 +1,11 @@
+.projects-container {
+  .projects {
+      .mat-card-content{
+        min-height: 230px;
+      }
+      .mat-card-actions{
+        display: flex;
+        justify-content: flex-end;
+      }
+  }
+}

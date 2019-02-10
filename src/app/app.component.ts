@@ -1,44 +1,25 @@
-import {Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router} from '@angular/router';
+import * as LINKS from './shared/constants';
 
 @Component({
   selector: 'app-root',
-  template: `
-  <div class="app-container">
-    <h1>Angular Universal Demo utilizing Angular & Angular CLI</h1>
-    <nav class="nav-links">
-      <a routerLink="/">Home</a>
-      <a routerLink="/lazy">Lazy-loaded Route</a>
-      <a routerLink="/lazy/nested">Nested Routes work too</a>
-    </nav>
-    <div class="router-container">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
-  `,
-  styles: [`
-    :host {
-      background: #f1f1f1;
-      font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-      font-display: swap;
-    }
-    .nav-links {
-      background: #008591;
-    }
-    .nav-links a {
-      color: #fff;
-      display: inline-block;
-      padding: 1rem;
-      margin-right: 3rem;
-      text-decoration: none;
-      font-weight: bold;
-      letter-spacing: 0.1rem;
-    }
-    .router-container {
-      border: 0.5rem #00afc4 solid;
-      padding: 2rem;
-    }
-  `]
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-
+export class AppComponent implements OnInit {
+  navLinks = [];
+  showOverlay = false;
+  constructor(private router: Router, private _route: ActivatedRoute) {
+  }
+  ngOnInit() {
+    this.navLinks = [
+      {label: LINKS.HOME_LABEL, path: LINKS.HOME_PATH },
+      {label: LINKS.ABOUT_LABEL, path: LINKS.ABOUT_PATH },
+      {label: LINKS.CONTACT_LABEL, path: LINKS.CONTACT_PATH }
+    ];
+  }
+  toggleOverlay() {
+    this.showOverlay = !this.showOverlay;
+  }
 }

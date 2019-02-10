@@ -1,0 +1,15 @@
+<nav mat-tab-nav-bar *ngIf="!showOverlay">
+  <a
+    matTabLink
+    *ngFor="let link of navLinks"
+    [routerLink]="link.path"
+    routerLinkActive
+    #rla="routerLinkActive"
+    [active]="rla.isActive"
+  >
+    {{ link.label }}
+  </a>
+</nav>
+<div class="outlet-wrapper">
+  <router-outlet #route="outlet"></router-outlet>
+</div>

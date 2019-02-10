@@ -1,26 +1,64 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {RouterModule} from '@angular/router';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import {AppComponent} from './app.component';
-import {HomeComponent} from './home/home.component';
-import {TransferHttpCacheModule} from '@nguniversal/common';
+import { AppComponent } from "./app.component";
+import { TransferHttpCacheModule } from "@nguniversal/common";
+
+import { AppRoutingModule } from "./app.routes";
+import { HttpModule } from "@angular/http";
+
+import { BASE_URL } from "./shared/constants";
+
+import { ProjectsService } from "./shared/projects.service";
+import { MetaDataService } from "./services/meta-data.service";
+
+import { NgxGalleryModule } from "ngx-gallery";
+
+import {
+  MatCardModule,
+  MatButtonModule,
+  MatIconModule,
+  MatTabsModule,
+  MatExpansionModule,
+  MatListModule
+} from "@angular/material";
+
+import { FlexLayoutModule } from "@angular/flex-layout";
+
+import { ProjectsComponent } from "./components/projects/projects.component";
+import { AboutComponent } from "./components/about/about.component";
+import { SingleProjectComponent } from "./components/single-project/single-project.component";
+import { ContactComponent } from "./components/contact/contact.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    ProjectsComponent,
+    AboutComponent,
+    SingleProjectComponent,
+    ContactComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({appId: 'my-app'}),
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full'},
-      { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule'},
-      { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule'}
-    ]),
-    TransferHttpCacheModule,
+    BrowserModule.withServerTransition({ appId: "my-app" }),
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    HttpModule,
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule,
+    MatTabsModule,
+    MatExpansionModule,
+    MatListModule,
+    NgxGalleryModule,
+    TransferHttpCacheModule
   ],
-  providers: [],
+  providers: [
+    ProjectsService,
+    MetaDataService,
+    { provide: "BaseURL", useValue: BASE_URL }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

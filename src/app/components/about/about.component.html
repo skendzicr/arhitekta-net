@@ -1,0 +1,71 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="content-wrapper">
+    <mat-card-header>
+      <div mat-card-avatar class="avatar-image"></div>
+      <mat-card-title>Jelena Gutić Skendžić</mat-card-title>
+      <mat-card-subtitle>Diplomirani inženjer arhitekture</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Obrazovanje
+            </mat-panel-title>
+            <mat-panel-description>
+              Arhitekta
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>Arhitektonski fakultet Univerziteta u Beogradu</p>
+          <p>Smer: Arhitektonsko inženjerstvo</p>
+          <p>Licenca: 300 (Odgovorni projektant arhitektonskih projekata, uređenja slobodnih prostora i unutrašnjih instalacija
+            vodovoda i kanalizacije)</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Radno iskustvo
+            </mat-panel-title>
+            <mat-panel-description>
+              2008/17
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+              <!-- <h3 mat-subheader>Folders</h3> -->
+              <mat-list-item *ngFor="let job of jobs; let last = last;">
+                <h4 mat-line>{{job.year}}</h4>
+                <p mat-line> {{job.position}} </p>
+                <p mat-line> {{job.description}} </p>
+                <p mat-line> {{job.company}} </p>
+                <hr *ngIf=!last>
+              </mat-list-item>
+            </mat-list>
+          <!-- <mat-action-row>
+            <button mat-button color="warn" (click)="prevStep()">Previous</button>
+            <button mat-button color="primary" (click)="nextStep()">Next</button>
+          </mat-action-row> -->
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+               Lista referenci
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-list>
+                <mat-list-item *ngFor="let ref of references; let last = last;">
+                  <h4 mat-line>{{ref.position}}</h4>
+                  <div mat-line *ngFor='let item of ref.references'> {{item}} </div>
+                  <hr *ngIf=!last>
+                </mat-list-item>
+              </mat-list>
+            <!-- <mat-action-row>
+              <button mat-button color="warn" (click)="prevStep()">Previous</button>
+              <button mat-button color="primary" (click)="nextStep()">Next</button>
+            </mat-action-row> -->
+          </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import './theme.scss';
+html {
+  height: 90%;
+}
+.mat-sidenav-container, .mat-sidenav-content, .mat-tab-body-content {
+  transform: none !important;
+}
+
+body {
+  background: #ECEFF1;
+}
+
+mat-card {
+  margin: 20px;
+}
+/* You can add global styles to this file, and also import other style files */
+@import './theme.scss';
+html {
+  height: 90%;
+}
+.mat-sidenav-container, .mat-sidenav-content, .mat-tab-body-content {
+  transform: none !important;
+}
+
+body {
+  background: #ECEFF1;
+}
+
+mat-card {
+  margin: 20px;
+}

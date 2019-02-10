@@ -1,0 +1,31 @@
+<div
+  fxLayout="row wrap"
+  fxLayout.xs="column"
+  fxLayoutAlign="space-around center"
+  class="projects-container"
+>
+  <mat-card
+    fxFlex.xs="1 1 100%"
+    fxFlex.gt-xs="1 1 100%"
+    fxFlex.gt-sm="1 1 40%"
+    fxFlex.gt-md="1 1 25%"
+    class="projects"
+    *ngFor="let project of projects"
+  >
+    <mat-card-header>
+      <mat-card-title>{{ project.name }}</mat-card-title>
+      <mat-card-subtitle>{{ project.category }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{ project.image }}" alt="{{ project.name }}" />
+    <mat-card-content>
+      <p>
+        {{ project.description }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button [routerLink]="['/projekti', project.slug]">
+        DETALJNIJE
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

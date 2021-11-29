@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:/Users/skendza/WebstormProjects/arhitekta-net/remix/arhitekta-net/app/routes/projects/$slug.tsx?browser", "../../../../app/routes/projects/$slug.tsx"],
+  "sourcesContent": ["export { default } from \"/Users/skendza/WebstormProjects/arhitekta-net/remix/arhitekta-net/app/routes/projects/$slug.tsx\";", "import { useLoaderData } from \"remix\";\n\nexport let loader = async ({ params }: any) => {\n  return params.slug;\n};\n\nexport default function ProjectSlug() {\n  const project = useLoaderData();\n  // return <div dangerouslySetInnerHTML={{ __html: project.html }}></div>;\n  let slug = useLoaderData();\n  return (\n    <div>\n      <h1>Some Post: {slug}</h1>\n    </div>\n  );\n}\n"],
+  "mappings": ";;;;;;;;;AAAA;;;ACAA;AAMe,uBAAuB;AACpC,QAAM,UAAU;AAEhB,MAAI,OAAO;AACX,SACE,oCAAC,OAAD,MACE,oCAAC,MAAD,MAAI,eAAY;AAAA;",
+  "names": []
+}

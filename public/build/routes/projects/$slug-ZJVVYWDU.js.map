@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:/Users/skendza/WebstormProjects/arhitekta-net/remix/arhitekta-net/app/routes/projects/$slug.tsx?browser", "../../../../app/routes/projects/$slug.tsx"],
+  "sourcesContent": ["export { default } from \"/Users/skendza/WebstormProjects/arhitekta-net/remix/arhitekta-net/app/routes/projects/$slug.tsx\";", "export default function ProjectSlug() {\n  return (\n    <div>\n      <h1>Some Project</h1>\n    </div>\n  );\n}\n"],
+  "mappings": ";;;;;;AAAA;;;ACAA;AAAe,uBAAuB;AACpC,SACE,oCAAC,OAAD,MACE,oCAAC,MAAD,MAAI;AAAA;",
+  "names": []
+}

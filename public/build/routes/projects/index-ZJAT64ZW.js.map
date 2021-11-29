@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:/Users/skendza/WebstormProjects/arhitekta-net/remix/arhitekta-net/app/routes/projects/index.tsx?browser", "../../../../app/routes/projects/index.tsx"],
+  "sourcesContent": ["export { default } from \"/Users/skendza/WebstormProjects/arhitekta-net/remix/arhitekta-net/app/routes/projects/index.tsx\";", "import {Link, useLoaderData} from 'remix';\nimport {Project} from '../../types';\n\nexport let loader = ():Project[] => {\n  return getProjects()\n\n};\n\n\n\nexport default function Projects() {\n  let projects = useLoaderData<Project[]>();\n  return (\n    <div>\n      <h1>Projects</h1>\n      <ul>\n        {projects.map(projects => (\n          <li key={projects.slug}>\n            <Link to={projects.slug}>{projects.title}</Link>\n          </li>\n        ))}\n      </ul>\n    </div>\n  );\n}\n"],
+  "mappings": ";;;;;;;;;;AAAA;;;ACAA;AAUe,oBAAoB;AACjC,MAAI,WAAW;AACf,SACE,oCAAC,OAAD,MACE,oCAAC,MAAD,MAAI,aACJ,oCAAC,MAAD,MACG,SAAS,IAAI,eACZ,oCAAC,MAAD;AAAA,IAAI,KAAK,UAAS;AAAA,KAChB,oCAAC,MAAD;AAAA,IAAM,IAAI,UAAS;AAAA,KAAO,UAAS;AAAA;",
+  "names": []
+}

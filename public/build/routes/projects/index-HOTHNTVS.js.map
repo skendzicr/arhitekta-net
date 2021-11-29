@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:/Users/skendza/WebstormProjects/arhitekta-net/remix/arhitekta-net/app/routes/projects/index.ts?browser"],
+  "sourcesContent": ["export * from \"/Users/skendza/WebstormProjects/arhitekta-net/remix/arhitekta-net/app/routes/projects/index.ts\";"],
+  "mappings": ";;;;;AAAA;",
+  "names": []
+}

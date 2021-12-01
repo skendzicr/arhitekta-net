@@ -11,7 +11,7 @@ const BlogCard: FC<{
     }
   };
 }> = ({ blogPost }) => (
-  <div className="overflow-hidden shadow-lg rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto">
+  <figure className="overflow-hidden shadow-lg rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto">
     <a href="#" className="w-full block h-full">
       <img
         alt="blog photo"
@@ -30,7 +30,7 @@ const BlogCard: FC<{
         </p>
       </div>
     </a>
-  </div>
+  </figure>
 );
 
 export default BlogCard;

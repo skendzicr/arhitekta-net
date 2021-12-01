@@ -115,13 +115,16 @@ function Document({
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="remix-app">
-      <Header />
-      <div className="remix-app__main">
-        <div className="container remix-app__main-content">{children}</div>
+    <div className="relative bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+          <Header />
+          <div className="remix-app__main">
+            <div className="container remix-app__main-content">{children}</div>
+          </div>
+          <Footer />
+        </div>
       </div>
-     <Footer />
     </div>
   );
 }
-

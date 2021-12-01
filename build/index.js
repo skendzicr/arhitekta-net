@@ -68,7 +68,7 @@ function handleRequest(request, responseStatusCode, responseHeaders, remixContex
   });
 }
 
-// route-module:/Users/skendza/WebstormProjects/arhitekta-net/app/root.tsx
+// route-module:/Users/skendza/WebstormProjects/arhitekta-net-old/app/root.tsx
 var root_exports = {};
 __export(root_exports, {
   CatchBoundary: () => CatchBoundary,
@@ -79,11 +79,10 @@ __export(root_exports, {
 var import_remix3 = __toModule(require("remix"));
 
 // app/styles/global.css
-var global_default = "/build/_assets/global-FSBDLJ6M.css";
+var global_default = "/build/_assets/global-UAMBLTUS.css";
 
 // app/components/Header.tsx
 var import_react2 = __toModule(require("react"));
-var import_remix2 = __toModule(require("remix"));
 
 // app/components/Logo.tsx
 var import_react = __toModule(require("react"));
@@ -112,23 +111,95 @@ var Logo = () => /* @__PURE__ */ import_react.default.createElement("svg", {
 }));
 var Logo_default = Logo;
 
+// app/components/TailwindLink.tsx
+var import_remix2 = __toModule(require("remix"));
+var TailwindLink = ({
+  to,
+  linkText
+}) => {
+  return /* @__PURE__ */ React.createElement(import_remix2.Link, {
+    to,
+    className: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+  }, linkText);
+};
+var TailwindLink_default = TailwindLink;
+
 // app/components/Header.tsx
-var Header = () => /* @__PURE__ */ import_react2.default.createElement("header", {
-  className: "remix-app__header"
+var Header = () => /* @__PURE__ */ import_react2.default.createElement("header", null, /* @__PURE__ */ import_react2.default.createElement("div", {
+  className: "relative pt-6 px-4 sm:px-6 lg:px-8"
+}, /* @__PURE__ */ import_react2.default.createElement("nav", {
+  className: "relative flex items-center justify-between sm:h-10 lg:justify-start",
+  "aria-label": "Main navigation"
 }, /* @__PURE__ */ import_react2.default.createElement("div", {
-  className: "container remix-app__header-content"
-}, /* @__PURE__ */ import_react2.default.createElement(import_remix2.Link, {
+  className: "flex items-center flex-grow flex-shrink-0 lg:flex-grow-0"
+}, /* @__PURE__ */ import_react2.default.createElement("div", {
+  className: "flex items-center justify-between w-full md:w-auto"
+}, /* @__PURE__ */ import_react2.default.createElement("a", {
+  href: "#"
+}, /* @__PURE__ */ import_react2.default.createElement("span", {
+  className: "sr-only"
+}, "Arhitekta.net"), /* @__PURE__ */ import_react2.default.createElement(Logo_default, null)), /* @__PURE__ */ import_react2.default.createElement("div", {
+  className: "-mr-2 flex items-center md:hidden"
+}, /* @__PURE__ */ import_react2.default.createElement("button", {
+  type: "button",
+  className: "bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500",
+  "aria-expanded": "false"
+}, /* @__PURE__ */ import_react2.default.createElement("span", {
+  className: "sr-only"
+}, "Otvori glavni meni"), /* @__PURE__ */ import_react2.default.createElement("svg", {
+  className: "h-6 w-6",
+  xmlns: "http://www.w3.org/2000/svg",
+  fill: "none",
+  viewBox: "0 0 24 24",
+  stroke: "currentColor",
+  "aria-hidden": "true"
+}, /* @__PURE__ */ import_react2.default.createElement("path", {
+  "stroke-linecap": "round",
+  "stroke-linejoin": "round",
+  "stroke-width": "2",
+  d: "M4 6h16M4 12h16M4 18h16"
+})))))), /* @__PURE__ */ import_react2.default.createElement("div", {
+  className: "hidden md:block md:ml-10 md:pr-4 md:space-x-8"
+}, /* @__PURE__ */ import_react2.default.createElement(TailwindLink_default, {
   to: "/",
-  title: "Remix",
-  className: "remix-app__header-home-link"
-}, /* @__PURE__ */ import_react2.default.createElement(Logo_default, null)), /* @__PURE__ */ import_react2.default.createElement("nav", {
-  "aria-label": "Main navigation",
-  className: "remix-app__header-nav"
-}, /* @__PURE__ */ import_react2.default.createElement("ul", null, /* @__PURE__ */ import_react2.default.createElement("li", null, /* @__PURE__ */ import_react2.default.createElement(import_remix2.Link, {
-  to: "/"
-}, "Home")), /* @__PURE__ */ import_react2.default.createElement("li", null, /* @__PURE__ */ import_react2.default.createElement("a", {
-  href: "/projects"
-}, "Projekti"))))));
+  linkText: "Home"
+}), /* @__PURE__ */ import_react2.default.createElement(TailwindLink_default, {
+  to: "/projects",
+  linkText: "Projekti"
+})))), /* @__PURE__ */ import_react2.default.createElement("div", {
+  className: "absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+}, /* @__PURE__ */ import_react2.default.createElement("div", {
+  className: "rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden"
+}, /* @__PURE__ */ import_react2.default.createElement("div", {
+  className: "px-5 pt-4 flex items-center justify-between"
+}, /* @__PURE__ */ import_react2.default.createElement("div", {
+  className: "-mr-2"
+}, /* @__PURE__ */ import_react2.default.createElement("button", {
+  type: "button",
+  className: "bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+}, /* @__PURE__ */ import_react2.default.createElement("span", {
+  className: "sr-only"
+}, "Close main menu"), /* @__PURE__ */ import_react2.default.createElement("svg", {
+  className: "h-6 w-6",
+  xmlns: "http://www.w3.org/2000/svg",
+  fill: "none",
+  viewBox: "0 0 24 24",
+  stroke: "currentColor",
+  "aria-hidden": "true"
+}, /* @__PURE__ */ import_react2.default.createElement("path", {
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  strokeWidth: "2",
+  d: "M6 18L18 6M6 6l12 12"
+}))))), /* @__PURE__ */ import_react2.default.createElement("div", {
+  className: "px-2 pt-2 pb-3 space-y-1"
+}, /* @__PURE__ */ import_react2.default.createElement(TailwindLink_default, {
+  to: "/",
+  linkText: "Home"
+}), /* @__PURE__ */ import_react2.default.createElement(TailwindLink_default, {
+  to: "/projects",
+  linkText: "Projekti"
+})))));
 var Header_default = Header;
 
 // app/components/Footer.tsx
@@ -142,7 +213,7 @@ var Footer = () => {
 };
 var Footer_default = Footer;
 
-// route-module:/Users/skendza/WebstormProjects/arhitekta-net/app/root.tsx
+// route-module:/Users/skendza/WebstormProjects/arhitekta-net-old/app/root.tsx
 function links() {
   return [{ rel: "stylesheet", href: global_default }];
 }
@@ -187,15 +258,19 @@ function Document({
 }
 function Layout({ children }) {
   return /* @__PURE__ */ React.createElement("div", {
-    className: "remix-app"
+    className: "relative bg-white overflow-hidden"
+  }, /* @__PURE__ */ React.createElement("div", {
+    className: "max-w-7xl mx-auto"
+  }, /* @__PURE__ */ React.createElement("div", {
+    className: "relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32"
   }, /* @__PURE__ */ React.createElement(Header_default, null), /* @__PURE__ */ React.createElement("div", {
     className: "remix-app__main"
   }, /* @__PURE__ */ React.createElement("div", {
     className: "container remix-app__main-content"
-  }, children)), /* @__PURE__ */ React.createElement(Footer_default, null));
+  }, children)), /* @__PURE__ */ React.createElement(Footer_default, null))));
 }
 
-// route-module:/Users/skendza/WebstormProjects/arhitekta-net/app/routes/projects/$slug.tsx
+// route-module:/Users/skendza/WebstormProjects/arhitekta-net-old/app/routes/projects/$slug.tsx
 var slug_exports = {};
 __export(slug_exports, {
   default: () => ProjectSlug,
@@ -228,7 +303,7 @@ var getProject = async (slug) => {
   return { slug, html, title: attributes.meta.title };
 };
 
-// route-module:/Users/skendza/WebstormProjects/arhitekta-net/app/routes/projects/$slug.tsx
+// route-module:/Users/skendza/WebstormProjects/arhitekta-net-old/app/routes/projects/$slug.tsx
 var loader = async ({ params }) => {
   return getProject(params.slug);
 };
@@ -239,7 +314,7 @@ function ProjectSlug() {
   });
 }
 
-// route-module:/Users/skendza/WebstormProjects/arhitekta-net/app/routes/projects/index.tsx
+// route-module:/Users/skendza/WebstormProjects/arhitekta-net-old/app/routes/projects/index.tsx
 var projects_exports = {};
 __export(projects_exports, {
   ErrorBoundary: () => ErrorBoundary2,
@@ -250,7 +325,7 @@ var import_remix5 = __toModule(require("remix"));
 var import_react4 = __toModule(require("react"));
 
 // app/components/BlogCard.tsx
-var BlogCard = ({ blogPost }) => /* @__PURE__ */ React.createElement("div", {
+var BlogCard = ({ blogPost }) => /* @__PURE__ */ React.createElement("figure", {
   className: "overflow-hidden shadow-lg rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto"
 }, /* @__PURE__ */ React.createElement("a", {
   href: "#",
@@ -270,7 +345,7 @@ var BlogCard = ({ blogPost }) => /* @__PURE__ */ React.createElement("div", {
 }, blogPost.meta.description))));
 var BlogCard_default = BlogCard;
 
-// route-module:/Users/skendza/WebstormProjects/arhitekta-net/app/routes/projects/index.tsx
+// route-module:/Users/skendza/WebstormProjects/arhitekta-net-old/app/routes/projects/index.tsx
 var loader2 = () => {
   return getProjects();
 };
@@ -286,7 +361,7 @@ function ErrorBoundary2({ error }) {
   return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h1", null, "Imamo problem!"), /* @__PURE__ */ React.createElement("p", null, error.message), /* @__PURE__ */ React.createElement("p", null, error.name), /* @__PURE__ */ React.createElement("p", null, error.stack), /* @__PURE__ */ React.createElement("hr", null), /* @__PURE__ */ React.createElement("p", null, "Gre\u0161ka je nastala u u\u010Ditavanju projekata."));
 }
 
-// route-module:/Users/skendza/WebstormProjects/arhitekta-net/app/routes/demos/actions.tsx
+// route-module:/Users/skendza/WebstormProjects/arhitekta-net-old/app/routes/demos/actions.tsx
 var actions_exports = {};
 __export(actions_exports, {
   action: () => action,
@@ -335,7 +410,7 @@ function ActionsDemo() {
   }, /* @__PURE__ */ React.createElement("code", null, "useActionData"))))));
 }
 
-// route-module:/Users/skendza/WebstormProjects/arhitekta-net/app/routes/demos/correct.tsx
+// route-module:/Users/skendza/WebstormProjects/arhitekta-net-old/app/routes/demos/correct.tsx
 var correct_exports = {};
 __export(correct_exports, {
   default: () => NiceWork
@@ -344,7 +419,7 @@ function NiceWork() {
   return /* @__PURE__ */ React.createElement("h1", null, "You got it right!");
 }
 
-// route-module:/Users/skendza/WebstormProjects/arhitekta-net/app/routes/demos/params.tsx
+// route-module:/Users/skendza/WebstormProjects/arhitekta-net-old/app/routes/demos/params.tsx
 var params_exports = {};
 __export(params_exports, {
   default: () => Boundaries,
@@ -372,7 +447,7 @@ function Boundaries() {
   }, "This one will throw an error")))));
 }
 
-// route-module:/Users/skendza/WebstormProjects/arhitekta-net/app/routes/demos/params/index.tsx
+// route-module:/Users/skendza/WebstormProjects/arhitekta-net-old/app/routes/demos/params/index.tsx
 var params_exports2 = {};
 __export(params_exports2, {
   default: () => Boundaries2
@@ -383,7 +458,7 @@ function Boundaries2() {
   }, "client errors"), ")"), /* @__PURE__ */ React.createElement("p", null, "Loaders and Actions can throw a ", /* @__PURE__ */ React.createElement("code", null, "Response"), " instead of an error and Remix will render the CatchBoundary instead of the component. This is great when loading data from a database isn't found. As soon as you know you can't render the component normally, throw a 404 response and send your app into the catch boundary. Just like error boundaries, catch boundaries bubble, too."));
 }
 
-// route-module:/Users/skendza/WebstormProjects/arhitekta-net/app/routes/demos/params/$id.tsx
+// route-module:/Users/skendza/WebstormProjects/arhitekta-net-old/app/routes/demos/params/$id.tsx
 var id_exports = {};
 __export(id_exports, {
   CatchBoundary: () => CatchBoundary2,
@@ -434,7 +509,7 @@ var meta3 = ({ data }) => {
   };
 };
 
-// route-module:/Users/skendza/WebstormProjects/arhitekta-net/app/routes/demos/about.tsx
+// route-module:/Users/skendza/WebstormProjects/arhitekta-net-old/app/routes/demos/about.tsx
 var about_exports = {};
 __export(about_exports, {
   default: () => Index,
@@ -456,7 +531,7 @@ function Index() {
   }, "read all about nested routes in the docs"), "."), /* @__PURE__ */ React.createElement("hr", null), /* @__PURE__ */ React.createElement(import_remix9.Outlet, null)));
 }
 
-// route-module:/Users/skendza/WebstormProjects/arhitekta-net/app/routes/demos/about/index.tsx
+// route-module:/Users/skendza/WebstormProjects/arhitekta-net-old/app/routes/demos/about/index.tsx
 var about_exports2 = {};
 __export(about_exports2, {
   default: () => AboutIndex
@@ -468,7 +543,7 @@ function AboutIndex() {
   }, "Check out one of them here."))));
 }
 
-// route-module:/Users/skendza/WebstormProjects/arhitekta-net/app/routes/demos/about/whoa.tsx
+// route-module:/Users/skendza/WebstormProjects/arhitekta-net-old/app/routes/demos/about/whoa.tsx
 var whoa_exports = {};
 __export(whoa_exports, {
   default: () => AboutIndex2
@@ -480,7 +555,7 @@ function AboutIndex2() {
   }, "Go back to the ", /* @__PURE__ */ React.createElement("code", null, "/about"), " index."))));
 }
 
-// route-module:/Users/skendza/WebstormProjects/arhitekta-net/app/routes/index.tsx
+// route-module:/Users/skendza/WebstormProjects/arhitekta-net-old/app/routes/index.tsx
 var routes_exports = {};
 __export(routes_exports, {
   default: () => Index2,

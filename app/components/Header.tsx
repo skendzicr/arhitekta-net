@@ -5,7 +5,7 @@ import { Popover, Transition } from "@headlessui/react";
 import { Link } from "remix";
 
 const Header = () => (
-  <header>
+  <header className="bg-white">
     <Popover>
       <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
         <nav
@@ -27,7 +27,7 @@ const Header = () => (
             </div>
           </div>
           <div className="hidden md:flex md:ml-10 md:pr-4 md:space-x-8">
-            <TailwindLink to={"/projects"} linkText={"Projekti"} />
+            <TailwindLink to={"/projekti"} linkText={"Projekti"} />
             <TailwindLink to={"/biography"} linkText={"Biografija"} />
             <TailwindLink to={"/contact"} linkText={"Kontakt"} />
           </div>
@@ -58,7 +58,7 @@ const Header = () => (
               </div>
             </div>
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <TailwindLink to={"/projects"} linkText={"Projekti"} />
+              <TailwindLink to={"/projekti"} linkText={"Projekti"} />
               <TailwindLink to={"/biography"} linkText={"Biografija"} />
               <TailwindLink to={"/contact"} linkText={"Kontakt"} />
             </div>

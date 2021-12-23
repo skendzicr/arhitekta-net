@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["browser-route-module:/Users/skendza/WebstormProjects/arhitekta-net/remix/arhitekta-net/app/routes/demos/correct.tsx?browser", "../../../../app/routes/demos/correct.tsx"],
-  "sourcesContent": ["export { default } from \"/Users/skendza/WebstormProjects/arhitekta-net/remix/arhitekta-net/app/routes/demos/correct.tsx\";", "export default function NiceWork() {\n  return <h1>You got it right!</h1>;\n}\n"],
-  "mappings": ";;;;;;AAAA;;;ACAA;AAAe,oBAAoB;AACjC,SAAO,oCAAC,MAAD,MAAI;AAAA;",
-  "names": []
-}

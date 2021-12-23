@@ -1,5 +1,4 @@
 import {
-  Link,
   Links,
   LiveReload,
   Meta,
@@ -8,11 +7,10 @@ import {
   ScrollRestoration,
   useCatch,
 } from "remix";
-import type { LinksFunction } from "remix";
 
 import styles from "~/styles/global.css";
-import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 // https://remix.run/api/app#links
 export function links() {
@@ -95,7 +93,7 @@ function Document({
   title?: string;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full bg-white">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -103,7 +101,7 @@ function Document({
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="h-full ">
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -116,8 +114,11 @@ function Document({
 function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      {children}
-      <Footer />
+      <div className="relative overflow-hidden">
+        <Header />
+        {children}
+        <Footer />
+      </div>
     </>
   );
 }

@@ -21,7 +21,7 @@ const ProjectsSection: FC<{ projects: Project[] }> = ({ projects }) => {
                   />
                 </div>
                 <h3 className="mt-6 text-sm text-gray-500">
-                  <a href={project.slug}>
+                  <a href={`projekti/${project.slug}`}>
                     <span className="absolute inset-0" />
                     {project.meta.category}
                   </a>

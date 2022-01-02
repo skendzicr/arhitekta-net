@@ -14,8 +14,9 @@ type IndexData = {
 // https://remix.run/api/conventions#loader
 export let loader: LoaderFunction = async () => {
   let projects = await getProjects();
+
   // https://remix.run/api/remix#json
-  return json({ projects });
+  return json({ projects: projects.slice(0, 3) });
 };
 
 // https://remix.run/api/conventions#meta

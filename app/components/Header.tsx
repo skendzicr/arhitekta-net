@@ -28,8 +28,8 @@ const Header = () => (
           </div>
           <div className="hidden md:flex md:ml-10 md:pr-4 md:space-x-8">
             <TailwindLink to={"/projekti"} linkText={"Projekti"} />
-            <TailwindLink to={"/biography"} linkText={"Biografija"} />
-            <TailwindLink to={"/contact"} linkText={"Kontakt"} />
+            <TailwindLink to={"/biografija"} linkText={"Biografija"} />
+            <TailwindLink to={"/kontakt"} linkText={"Kontakt"} />
           </div>
         </nav>
       </div>

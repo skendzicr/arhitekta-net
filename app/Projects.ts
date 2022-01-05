@@ -6,6 +6,7 @@ import { marked } from "marked";
 
 // relative to the server output not the source!
 const postsPath = path.join(__dirname, "..", "projects");
+const imagesPath = path.join(__dirname, "..", "public", "assets", "images");
 
 export const getProjects = async (): Promise<Project[]> => {
   const dir = await fs.readdir(postsPath);
@@ -27,53 +28,65 @@ export const getProject = async (slug: string) => {
   const file = await fs.readFile(filepath);
   const { attributes, body } = parseFrontMatter<Project>(file.toString());
   const html = marked(body);
-  return { slug, html, title: attributes.meta.title };
+  const images = await getProjectImages(slug);
+  return {
+    slug,
+    html,
+    title: attributes.meta.title,
+    images,
+    category: attributes.meta.category,
+  };
+};
+
+export const getProjectImages = async (slug: string) => {
+  const files = await fs.readdir(imagesPath);
+  return files.filter((file) => file.includes(slug));
 };
 
 const PROJECTS = [
   {
     id: 0,
     title: "StartIT centar Inđija",
-    image: "assets/images/start-it-indjija-4.jpg",
+    image: "assets/images/startit-indjija-4.jpg",
     // tslint:disable-next-line:max-line-length
     description: `Startit Centar Indjija je zamišljen kao coworking prostor za umrežavanje, saradnju i razmenu prakse i znanja. Startit Centar Inđija je prostor od 250m2 u samom centru grada i nalazi se u “inđijskoj Knez Mihajlovoj” — Vojvode Stepe 4. Centar je prvi projekat koji je finansiran donacijama iz Kickstarter kampanje koju je izgurala domaća IT zajednica.`,
     category: "Dizajn enterijera",
-    slug: "startit-centar-indjija",
+    slug: "startit-indjija",
     images: [
       {
-        big: "assets/images/start-it-indjija-1.jpg",
-        medium: "assets/images/start-it-indjija-1.jpg",
-        small: "assets/images/start-it-indjija-1.jpg",
+        big: "assets/images/startit-indjija-1.jpg",
+        medium: "assets/images/startit-indjija-1.jpg",
+        small: "assets/images/startit-indjija-1.jpg",
       },
       {
-        big: "assets/images/start-it-indjija-2.jpg",
-        medium: "assets/images/start-it-indjija-2.jpg",
-        small: "assets/images/start-it-indjija-2.jpg",
+        big: "assets/images/startit-indjija-2.jpg",
+        medium: "assets/images/startit-indjija-2.jpg",
+        small: "assets/images/startit-indjija-2.jpg",
       },
       {
-        big: "assets/images/start-it-indjija-3.jpg",
-        medium: "assets/images/start-it-indjija-3.jpg",
-        small: "assets/images/start-it-indjija-3.jpg",
+        big: "assets/images/startit-indjija-3.jpg",
+        medium: "assets/images/startit-indjija-3.jpg",
+        small: "assets/images/startit-indjija-3.jpg",
       },
       {
-        big: "assets/images/start-it-indjija-4.jpg",
-        medium: "assets/images/start-it-indjija-4.jpg",
-        small: "assets/images/start-it-indjija-4.jpg",
+        big: "assets/images/startit-indjija-4.jpg",
+        medium: "assets/images/startit-indjija-4.jpg",
+        small: "assets/images/startit-indjija-4.jpg",
       },
       {
-        big: "assets/images/start-it-indjija-5.jpg",
-        medium: "assets/images/start-it-indjija-5.jpg",
-        small: "assets/images/start-it-indjija-5.jpg",
+        big: "assets/images/startit-indjija-5.jpg",
+        medium: "assets/images/startit-indjija-5.jpg",
+        small: "assets/images/startit-indjija-5.jpg",
       },
       {
-        big: "assets/images/start-it-indjija-6.jpg",
-        medium: "assets/images/start-it-indjija-6.jpg",
-        small: "assets/images/start-it-indjija-6.jpg",
+        big: "assets/images/startit-indjija-6.jpg",
+        medium: "assets/images/startit-indjija-6.jpg",
+        small: "assets/images/startit-indjija-6.jpg",
       },
       {
-        big: "assets/images/start-it-indjija-7.jpg",
-        medium: "assets/images/start-it-indjija-7.jpg",
-        small: "assets/images/start-it-indjija-7.jpg",
+        big: "assets/images/startit-indjija-7.jpg",
+        medium: "assets/images/startit-indjija-7.jpg",
+        small: "assets/images/startit-indjija-7.jpg",
       },
     ],
     // tslint:disable-next-line:max-line-length
@@ -112,36 +125,36 @@ const PROJECTS = [
   {
     id: 2,
     title: "Poslovni prostor Koving",
-    image: "assets/images/office-enterior-design-1.jpg",
+    image: "assets/images/poslovni-prostor-koving-1.jpg",
     description:
       "Savremeno poslovno okruženje zahteva pouzdanog strateškog partnera koji će učiniti poslovanje bezbednim, temeljnim, a samim tim i uspešnim. Poslovni prostor mora da prati uređenje koje mora da bude u skladu sa namenom istog. Za poslovni prostor firme Koving iskorišćeni su odgovarajući elementi da bi se na određen način predstavila i delatnost same firme.",
     category: "Dizajn enterijera",
     slug: "poslovni-prostor-koving",
     images: [
       {
-        big: "assets/images/office-enterior-design-1.jpg",
-        medium: "assets/images/office-enterior-design-1.jpg",
-        small: "assets/images/office-enterior-design-1.jpg",
+        big: "assets/images/poslovni-prostor-koving-1.jpg",
+        medium: "assets/images/poslovni-prostor-koving-1.jpg",
+        small: "assets/images/poslovni-prostor-koving-1.jpg",
       },
       {
-        big: "assets/images/office-enterior-design-2.jpg",
-        medium: "assets/images/office-enterior-design-2.jpg",
-        small: "assets/images/office-enterior-design-2.jpg",
+        big: "assets/images/poslovni-prostor-koving-2.jpg",
+        medium: "assets/images/poslovni-prostor-koving-2.jpg",
+        small: "assets/images/poslovni-prostor-koving-2.jpg",
       },
       {
-        big: "assets/images/office-enterior-design-3.jpg",
-        medium: "assets/images/office-enterior-design-3.jpg",
-        small: "assets/images/office-enterior-design-3.jpg",
+        big: "assets/images/poslovni-prostor-koving-3.jpg",
+        medium: "assets/images/poslovni-prostor-koving-3.jpg",
+        small: "assets/images/poslovni-prostor-koving-3.jpg",
       },
       {
-        big: "assets/images/office-enterior-design-4.jpg",
-        medium: "assets/images/office-enterior-design-4.jpg",
-        small: "assets/images/office-enterior-design-4.jpg",
+        big: "assets/images/poslovni-prostor-koving-4.jpg",
+        medium: "assets/images/poslovni-prostor-koving-4.jpg",
+        small: "assets/images/poslovni-prostor-koving-4.jpg",
       },
       {
-        big: "assets/images/office-enterior-design-5.jpg",
-        medium: "assets/images/office-enterior-design-5.jpg",
-        small: "assets/images/office-enterior-design-5.jpg",
+        big: "assets/images/poslovni-prostor-koving-5.jpg",
+        medium: "assets/images/poslovni-prostor-koving-5.jpg",
+        small: "assets/images/poslovni-prostor-koving-5.jpg",
       },
     ],
   },
@@ -214,26 +227,26 @@ const PROJECTS = [
   {
     id: 4,
     title: "Enterijer restorana",
-    image: "assets/images/restaurant-enterior-design-1.jpg",
+    image: "assets/images/restaurant-enterijer-bnb-5.jpg",
     description:
       "Enterijer  restorana u kome bi posetioci trebali da se osete prijatno bilo da su došli na poslovni ručak ili na večeru sa prijateljima. Svaki enterijer restorana treba da se uredi tako da je posetiocima jasno kakav je knocept tog restorana. Tako u ovom idejnom rešenju može da se primeti izbor boja koje će osvežiti prostor, a njihova kombinacija čini prostor dovoljno elegantnim da je restoran pogoadan i za priajtnu večeru.",
     category: "Dizajn enterijera",
     slug: "enterijer-restorana",
     images: [
       {
-        big: "assets/images/restaurant-enterior-design-1.jpg",
-        medium: "assets/images/restaurant-enterior-design-1.jpg",
-        small: "assets/images/restaurant-enterior-design-1.jpg",
+        big: "assets/images/restaurant-enterijer-bnb-5.jpg",
+        medium: "assets/images/restaurant-enterijer-bnb-5.jpg",
+        small: "assets/images/restaurant-enterijer-bnb-5.jpg",
       },
       {
-        big: "assets/images/restaurant-enterior-design-2.jpg",
-        medium: "assets/images/restaurant-enterior-design-2.jpg",
-        small: "assets/images/restaurant-enterior-design-2.jpg",
+        big: "assets/images/restaurant-enterijer-bnb-6.jpg",
+        medium: "assets/images/restaurant-enterijer-bnb-6.jpg",
+        small: "assets/images/restaurant-enterijer-bnb-6.jpg",
       },
       {
-        big: "assets/images/restaurant-enterior-design-3.jpg",
-        medium: "assets/images/restaurant-enterior-design-3.jpg",
-        small: "assets/images/restaurant-enterior-design-3.jpg",
+        big: "assets/images/restaurant-enterijer-bnb-7.jpg",
+        medium: "assets/images/restaurant-enterijer-bnb-7.jpg",
+        small: "assets/images/restaurant-enterijer-bnb-7.jpg",
       },
     ],
   },
@@ -266,52 +279,52 @@ const PROJECTS = [
   {
     id: 6,
     title: "Idejno rešenje kuće za odmor",
-    image: "assets/images/resting-house-concept-1.jpg",
+    image: "assets/images/kuca-za-odmor-1.jpg",
     description:
       "Koncept blizak aktivnoj kući. Pošto nije određena lokacija ovog objekta, ono što je sigurno moguće iskoristiti od obnovljivih izvora energije je sunčeva energija. Zbog toga je i forma kuće usklađena upotrebi klasičnijih oblika solarnih ćelija. Deo krovne konstrukcije u isto vreme čini i nosače za solarne ploče. Takođe je predviđeno da se ove ploče po potrebi koriste i kao zaštita od sunca. Desno od ulaza se nalazi ostava na čijem kraju je moguće pristupiti i rezervoaru atmosferske vode. Sa druge strane rezervora se nalazi uređen kutak sa zelenilom tako da se ovim elementom ne narušava estetika objekta. Idejno rešenje kuće za odmor bi ukratko moglo da se opiše kao lakoća odmora",
     category: "Konstrukcija",
     slug: "kuca-za-odmor-koncept",
     images: [
       {
-        big: "assets/images/resting-house-concept-2.jpg",
-        medium: "assets/images/resting-house-concept-2.jpg",
-        small: "assets/images/resting-house-concept-2.jpg",
+        big: "assets/images/kuca-za-odmor-2.jpg",
+        medium: "assets/images/kuca-za-odmor-2.jpg",
+        small: "assets/images/kuca-za-odmor-2.jpg",
       },
       {
-        big: "assets/images/resting-house-concept-1.jpg",
-        medium: "assets/images/resting-house-concept-1.jpg",
-        small: "assets/images/resting-house-concept-1.jpg",
+        big: "assets/images/kuca-za-odmor-1.jpg",
+        medium: "assets/images/kuca-za-odmor-1.jpg",
+        small: "assets/images/kuca-za-odmor-1.jpg",
       },
     ],
   },
   {
     id: 7,
     title: "Uređenje stana",
-    image: "assets/images/enterior-design-1.jpg",
+    image: "assets/images/enterijer-bnb-5.jpg",
     description:
       "Za uređenje stana je najbitnije da stvorite prostor u kome ćete se osećati onako kako vi to želite, kao kod kuće. Arhitekta je tu da vam pomogne u kreiranju i realizaciji ideje. Ovde je prikazano nekoliko ideja uređenje stana, koje su rađene zahtevima vlasnika.",
     category: "Dizajn enterijera",
     slug: "uredjenje-stana",
     images: [
       {
-        big: "assets/images/enterior-design-2.jpg",
-        medium: "assets/images/enterior-design-2.jpg",
-        small: "assets/images/enterior-design-2.jpg",
+        big: "assets/images/enterijer-bnb-6.jpg",
+        medium: "assets/images/enterijer-bnb-6.jpg",
+        small: "assets/images/enterijer-bnb-6.jpg",
       },
       {
-        big: "assets/images/enterior-design-1.jpg",
-        medium: "assets/images/enterior-design-1.jpg",
-        small: "assets/images/enterior-design-1.jpg",
+        big: "assets/images/enterijer-bnb-5.jpg",
+        medium: "assets/images/enterijer-bnb-5.jpg",
+        small: "assets/images/enterijer-bnb-5.jpg",
       },
       {
-        big: "assets/images/enterior-design-3.jpg",
-        medium: "assets/images/enterior-design-3.jpg",
-        small: "assets/images/enterior-design-3.jpg",
+        big: "assets/images/enterijer-bnb-7.jpg",
+        medium: "assets/images/enterijer-bnb-7.jpg",
+        small: "assets/images/enterijer-bnb-7.jpg",
       },
       {
-        big: "assets/images/enterior-design-4.jpg",
-        medium: "assets/images/enterior-design-4.jpg",
-        small: "assets/images/enterior-design-4.jpg",
+        big: "assets/images/enterijer-bnb-8.jpg",
+        medium: "assets/images/enterijer-bnb-8.jpg",
+        small: "assets/images/enterijer-bnb-8.jpg",
       },
     ],
   },

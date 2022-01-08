@@ -1,5 +1,6 @@
 import { LoaderFunction, useLoaderData } from "remix";
 import { getProject } from "../../Projects";
+import Artwork from "../../components/Artwork";
 
 export let loader: LoaderFunction = async ({ params }: any) => {
   return getProject(params.slug);
@@ -23,15 +24,17 @@ export default function ProjectSlug() {
             <div className="flex flex-wrap -m-1 md:-m-2">
               {project.images.map((image: string) => (
                 <div
-                  className="flex flex-wrap w-1/3 hover:scale-110 cursor-pointer"
+                  className="flex flex-wrap w-1/3 cursor-pointer"
                   key={image}
                 >
                   <div className="w-full p-1 md:p-2">
-                    <img
-                      alt={image}
-                      className="block object-cover object-center w-full h-full rounded-lg"
-                      src={`/assets/images/${image}`}
-                    />
+                    <Artwork source={`/assets/images/${image}`}>
+                      <img
+                        alt={image}
+                        className="block object-cover object-center w-full h-full rounded-lg hover:scale-110 hover:opacity-50"
+                        src={`/assets/images/${image}`}
+                      />
+                    </Artwork>
                   </div>
                 </div>
               ))}

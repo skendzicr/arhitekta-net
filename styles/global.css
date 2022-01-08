@@ -3,3 +3,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#popper[data-popper-placement^='top'] > #arrow {
+  bottom: -0.5rem;
+  border-bottom:1px;
+  border-right:1px;
+
+  border-color: rgb(229, 231, 235);
+  border-style: solid;
+}
+
+#popper[data-popper-placement^='bottom'] > #arrow {
+  top: -0.5rem;
+  border-top:1px;
+  border-left:1px;
+
+  border-color: rgb(229, 231, 235);
+  border-style: solid;
+}
+
+#popper[data-popper-placement^='left'] > #arrow {
+  right: -0.5rem;
+  border-top:1px;
+  border-right:1px;
+
+  border-color: rgb(229, 231, 235);
+  border-style: solid;
+}
+
+#popper[data-popper-placement^='right'] > #arrow {
+  left: -0.5rem;
+  border-left:1px;
+  border-bottom:1px;
+
+  border-color: rgb(229, 231, 235);
+  border-style: solid;
+}

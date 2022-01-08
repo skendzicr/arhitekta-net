@@ -3,6 +3,7 @@ import Logo from "./Logo";
 import TailwindLink from "./TailwindLink";
 import { Popover, Transition } from "@headlessui/react";
 import { Link } from "remix";
+import { MenuIcon, XIcon } from "@heroicons/react/solid";
 
 const Header = () => (
   <header className="bg-white">
@@ -21,7 +22,7 @@ const Header = () => (
               <div className="-mr-2 flex items-center md:hidden">
                 <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                   <span className="sr-only">Open main menu</span>
-                  {/*<MenuIcon className="h-6 w-6" aria-hidden="true" />*/}
+                  <MenuIcon className="h-6 w-6" aria-hidden="true" />
                 </Popover.Button>
               </div>
             </div>
@@ -29,7 +30,12 @@ const Header = () => (
           <div className="hidden md:flex md:ml-10 md:pr-4 md:space-x-8">
             <TailwindLink to={"/projekti"} linkText={"Projekti"} />
             <TailwindLink to={"/biografija"} linkText={"Biografija"} />
-            <TailwindLink to={"/kontakt"} linkText={"Kontakt"} />
+            <a
+              href=" mailto:jelena@arhitekta.net?subject=Konsultacije%20u%20vezi%20konstrukcije&body=%5Bunesite%20vase%20pitanje%2C%20broj%20parcele%20ili%20zeljenu%20kvadraturu%5D "
+              className="block px-3 py-2 rounded-md text-base text-gray-700 hover:text-gray-900 hover:bg-gray-50 font-thin"
+            >
+              Kontakt
+            </a>
           </div>
         </nav>
       </div>
@@ -53,14 +59,19 @@ const Header = () => (
               <div className="-mr-2">
                 <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                   <span className="sr-only">Close main menu</span>
-                  {/*<XIcon className="h-6 w-6" aria-hidden="true" />*/}
+                  <XIcon className="h-6 w-6" aria-hidden="true" />
                 </Popover.Button>
               </div>
             </div>
             <div className="px-2 pt-2 pb-3 space-y-1">
               <TailwindLink to={"/projekti"} linkText={"Projekti"} />
-              <TailwindLink to={"/biography"} linkText={"Biografija"} />
-              <TailwindLink to={"/contact"} linkText={"Kontakt"} />
+              <TailwindLink to={"/biografija"} linkText={"Biografija"} />
+              <a
+                href=" mailto:jelena@arhitekta.net?subject=Konsultacije%20u%20vezi%20konstrukcije&body=%5Bunesite%20vase%20pitanje%2C%20broj%20parcele%20ili%20zeljenu%20kvadraturu%5D "
+                className="block px-3 py-2 rounded-md text-base text-gray-700 hover:text-gray-900 hover:bg-gray-50 font-thin"
+              >
+                Kontakt
+              </a>
             </div>
           </div>
         </Popover.Panel>

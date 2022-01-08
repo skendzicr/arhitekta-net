@@ -10,7 +10,7 @@ export default function ProjectSlug() {
   return (
     <section className="bg-white rounded p-6 md:p-7 lg:p-9">
       <div className="max-w-2xl mx-auto py-16 sm:py-24 lg:max-w-5xl">
-        <h2 className="font-bold text-purple-500">{project.category}</h2>
+        <h2 className="font-bold text-indigo-500">{project.category}</h2>
         <h1 className="font-black text-xl sm:text-2xl md:text-3xl lg:text-5xl mt-2">
           {project.title}
         </h1>

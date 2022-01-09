@@ -5,8 +5,8 @@ import parseFrontMatter from "front-matter";
 import { marked } from "marked";
 
 // relative to the server output not the source!
-const postsPath = path.join(process.cwd(), "projects");
-const imagesPath = path.join(process.cwd(), "public", "assets", "images");
+const postsPath = path.join("projects");
+const imagesPath = path.join("public", "assets", "images");
 
 export const getProjects = async (): Promise<Project[]> => {
   const projects = await fs.readdir(postsPath);

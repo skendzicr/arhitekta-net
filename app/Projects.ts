@@ -1,12 +1,12 @@
-import { Project } from "./types";
+import { Project } from "~/types";
 import * as path from "path";
 import * as fs from "fs/promises";
 import parseFrontMatter from "front-matter";
 import { marked } from "marked";
 
 // relative to the server output not the source!
-const postsPath = path.join("projects");
-const imagesPath = path.join("public", "assets", "images");
+const postsPath = path.join(__dirname, "../../../..", "projects");
+const imagesPath = path.join(__dirname, "../../../..", "public", "assets", "images");
 
 export const getProjects = async (): Promise<Project[]> => {
   const projects = await fs.readdir(postsPath);

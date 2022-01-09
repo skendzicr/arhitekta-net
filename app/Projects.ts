@@ -20,7 +20,7 @@ export const getProjects = async (): Promise<Project[]> => {
         ...attributes,
         slug: filename.replace(/\.md$/, ""),
         title: attributes.meta.title,
-        time: time.mtime,
+        time: time.mtime.getTime(),
       };
     })
   );

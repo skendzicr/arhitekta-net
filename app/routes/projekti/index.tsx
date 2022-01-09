@@ -7,7 +7,7 @@ export let loader = (): Promise<Project[]> => {
 };
 
 export default function Projects() {
-  let projects = useLoaderData<Project[]>();
+  let projects = useLoaderData<Project[]>().sort((a, b) => b.time - a.time);
   return (
     <section className="bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

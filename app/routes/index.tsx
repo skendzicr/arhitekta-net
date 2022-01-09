@@ -3,6 +3,7 @@ import { json, useLoaderData } from "remix";
 import ProjectsSection from "../components/ProjectsSection";
 import { getProjects } from "../Projects";
 import { Project } from "../types";
+import FeaturesSection from "../components/FeaturesSection";
 
 type IndexData = {
   projects: Project[];
@@ -84,6 +85,7 @@ export default function Index() {
         </div>
       </div>
       <ProjectsSection projects={data?.projects} />
+      <FeaturesSection />
     </>
   );
 }

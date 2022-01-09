@@ -9,15 +9,18 @@ const postsPath = path.join(__dirname, "..", "projects");
 const imagesPath = path.join(__dirname, "..", "public", "assets", "images");
 
 export const getProjects = async (): Promise<Project[]> => {
-  const dir = await fs.readdir(postsPath);
+  const projects = await fs.readdir(postsPath);
   return Promise.all(
-    dir.map(async (filename) => {
-      const file = await fs.readFile(path.join(postsPath, filename));
+    projects.map(async (filename) => {
+      const fileLocation = path.join(postsPath, filename);
+      const file = await fs.readFile(fileLocation);
+      const time = await fs.stat(fileLocation);
       const { attributes } = parseFrontMatter<Project>(file.toString());
       return {
         ...attributes,
         slug: filename.replace(/\.md$/, ""),
         title: attributes.meta.title,
+        time: time.mtime,
       };
     })
   );

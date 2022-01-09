@@ -2,13 +2,12 @@ import { FC } from "react";
 
 const BlogCard: FC<{
   blogPost: {
-    meta:{
-
-    image: string;
-    description: string;
-    title: string;
-    category: string;
-    }
+    meta: {
+      image: string;
+      description: string;
+      title: string;
+      category: string;
+    };
   };
 }> = ({ blogPost }) => (
   <figure className="overflow-hidden shadow-lg rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto">
@@ -19,7 +18,7 @@ const BlogCard: FC<{
         className="max-h-40 w-full object-cover"
       />
       <div className="bg-white dark:bg-gray-800 w-full p-4">
-        <p className="text-indigo-500 text-md font-medium">
+        <p className="text-yellow-500 text-md font-medium">
           {blogPost.meta.category}
         </p>
         <p className="text-gray-800 dark:text-white text-xl font-medium mb-2">

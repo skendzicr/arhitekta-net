@@ -11,7 +11,7 @@ const Artwork: FC<{ source: string }> = ({ children, source }) => {
     referenceElement.current,
     popperElement.current,
     {
-      placement: "left",
+      placement: "top",
       modifiers: [
         { name: "offset", options: { offset: [0, 15] } },
         { name: "arrow", options: { element: arrowElement.current } },
@@ -45,6 +45,7 @@ const Artwork: FC<{ source: string }> = ({ children, source }) => {
         onFocus={handleOnHover}
         onMouseLeave={handleOffHover}
         onBlur={handleOffHover}
+        style={{ aspectRatio: "16/10" }}
       >
         {children}
       </div>

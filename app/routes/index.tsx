@@ -16,14 +16,16 @@ export let loader: LoaderFunction = async () => {
   let projects = await getProjects();
 
   // https://remix.run/api/remix#json
-  return json({ projects: projects.slice(0, 3) });
+  return json({
+    projects: projects.sort((a, b) => b.time - a.time).slice(0, 3),
+  });
 };
 
 // https://remix.run/api/conventions#meta
 export let meta: MetaFunction = () => {
   return {
     title: "Arhitekta.net",
-    description: ` Arhitekta.net će vam pomoći u izgradnji od ideje i sna, preko
+    description: `Arhitekta.net će vam pomoći u izgradnji od ideje i sna, preko
                 crteža i 3D modela do stvarnosti. Mi smo umetnici sa licencom
                 inženjera.`,
   };
@@ -34,7 +36,7 @@ export default function Index() {
   let data = useLoaderData<IndexData>();
   return (
     <>
-      <div className="relative">
+      <div className="relative z-0">
         <div className="max-w-7xl mx-auto">
           <div className="relative z-10 pb-8  bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
             <svg
@@ -50,7 +52,7 @@ export default function Index() {
               <div className="sm:text-center lg:text-left">
                 <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                   <span className="block xl:inline">{`Mi projektujemo kuće, od kojih Vi `}</span>
-                  <span className="block text-indigo-600 xl:inline">
+                  <span className="block text-yellow-500 xl:inline">
                     pravite dom.
                   </span>
                 </h1>
@@ -63,7 +65,7 @@ export default function Index() {
                   <div className="rounded-md shadow">
                     <a
                       href="#"
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
+                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-500 hover:bg-yellow-700 md:py-4 md:text-lg md:px-10"
                     >
                       Zakažite konsultaciju
                     </a>

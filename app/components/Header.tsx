@@ -6,7 +6,7 @@ import { Link } from "remix";
 import { MenuIcon, XIcon } from "@heroicons/react/solid";
 
 const Header = () => (
-  <header className="bg-white">
+  <header className="bg-white z-10">
     <Popover>
       <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
         <nav
@@ -51,7 +51,7 @@ const Header = () => (
       >
         <Popover.Panel
           focus
-          className="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+          className="fixed z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
         >
           <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
             <div className="px-5 pt-4 flex items-center justify-between">

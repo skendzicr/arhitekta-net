@@ -11,7 +11,7 @@ const TailwindLink: FC<{ to: string; linkText: string }> = ({
       to={to}
       className={({ isActive }) =>
         isActive
-          ? `${baseClasses} text-indigo-700 hover:text-indigo-900 hover:bg-indigo-50 font-medium`
+          ? `${baseClasses} text-yellow-700 hover:text-yellow-900 hover:bg-yellow-50 font-medium`
           : `${baseClasses} text-gray-700 hover:text-gray-900 hover:bg-gray-50 font-thin`
       }
     >

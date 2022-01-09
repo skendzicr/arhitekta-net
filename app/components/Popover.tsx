@@ -49,7 +49,7 @@ const Popover: FC<{ description: string }> = ({ children, description }) => {
         ref={popperElement}
         style={styles.popper}
         {...attributes.popper}
-        className={`max-w-prose border-[1px] bg-indigo-50 border-indigo-200 p-4 ${
+        className={`max-w-prose border-[1px] bg-yellow-50 border-indigo-200 p-4 ${
           isVisible ? "visible" : "hidden"
         } rounded`}
       >
@@ -58,7 +58,7 @@ const Popover: FC<{ description: string }> = ({ children, description }) => {
           id="arrow"
           ref={arrowElement}
           style={arrowStyles}
-          className={`bg-indigo-50 -bottom-2 w-4 h-4 absolute  border-b-[1px]  border-r-[1px] border-indigo-200`}
+          className={`bg-yellow-50 -bottom-2 w-4 h-4 absolute  border-b-[1px]  border-r-[1px] border-indigo-200`}
         />
       </div>
     </>

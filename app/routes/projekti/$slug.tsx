@@ -11,7 +11,7 @@ export default function ProjectSlug() {
   return (
     <section className="bg-white rounded p-6 md:p-7 lg:p-9">
       <div className="max-w-2xl mx-auto py-16 sm:py-24 lg:max-w-5xl">
-        <h2 className="font-bold text-indigo-500">{project.category}</h2>
+        <h2 className="font-bold text-yellow-500">{project.category}</h2>
         <h1 className="font-black text-xl sm:text-2xl md:text-3xl lg:text-5xl mt-2">
           {project.title}
         </h1>
@@ -27,11 +27,11 @@ export default function ProjectSlug() {
                   className="flex flex-wrap w-1/3 cursor-pointer"
                   key={image}
                 >
-                  <div className="w-full p-1 md:p-2">
+                  <div className="w-full aspect-video p-1 md:p-2">
                     <Artwork source={`/assets/images/${image}`}>
                       <img
                         alt={image}
-                        className="block object-cover object-center w-full h-full rounded-lg hover:scale-110 hover:opacity-50"
+                        className="block object-fill object-center w-full h-full rounded-lg hover:scale-110 hover:opacity-50"
                         src={`/assets/images/${image}`}
                       />
                     </Artwork>

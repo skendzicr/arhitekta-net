@@ -20,7 +20,7 @@ const ProjectsSection: FC<{ projects: Project[] }> = ({ projects }) => {
                     className="w-full h-full object-center object-cover"
                   />
                 </div>
-                <h3 className="mt-6 text-sm text-indigo-500">
+                <h3 className="mt-6 text-sm text-yellow-500">
                   <a href={`projekti/${project.slug}`}>
                     <span className="absolute inset-0" />
                     {project.meta.category}

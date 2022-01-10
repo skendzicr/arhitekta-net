@@ -4,6 +4,7 @@ meta:
   image: assets/images/prizemna-kuca-6.jpg
   description: Stambeni objekat sa jednom etažom pogodan za porodice sa malom decom, starije osobe ili osobe sa invaliditetom.
   category: Konstrukcija
+  featured: true
 slug: prizemna-kuca
 ---
 Projekat koji predstavlja sve ono što znamo i umemo da radimo. Od idejnog projekta, kroz izvođenje i nadzor radova do krajnjeg rešenja i rezultata.

@@ -4,6 +4,7 @@ meta:
   image: assets/images/projekat-nadogradnje-2.jpg
   description: Prema zahtevima investitora urađen je projekat nadogradnje. Nadograđeni sprat je projektovan kao stambeni deo.
   category: Konstrukcija
+  featured: true
 slug: projekat-nadogradnje
 ---
 Prema zahtevima investitora urađen je projekat nadogradnje. Nadograđeni sprat je projektovan kao stambeni deo.

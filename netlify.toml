@@ -4,7 +4,6 @@
   publish = "public"
 
 [functions]
-  node_bundler = "esbuild"
   included_files = ["projects/**.md","public/assets/**"]
   external_node_modules = ["@remix-run/react"]
 [dev]

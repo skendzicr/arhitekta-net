@@ -14,11 +14,11 @@ type IndexData = {
 // to the component that renders it.
 // https://remix.run/api/conventions#loader
 export let loader: LoaderFunction = async () => {
-  let projects = await getProjects();
+  let { projects } = await getProjects();
 
   // https://remix.run/api/remix#json
   return json({
-    projects: projects.sort((a, b) => b.time - a.time).slice(0, 3),
+    projects,
   });
 };
 
@@ -31,13 +31,14 @@ export let meta: MetaFunction = () => {
                 inženjera.`,
     "og:image": "/assets/images/prizemna-kuca-6.jpg",
     "og:description": `Arhitekta.net će vam pomoći u izgradnji od ideje i sna, preko crteža i 3D modela do stvarnosti. Mi smo umetnici sa licencom inženjera.`,
-    "og:title": `Arhitekta.net`
+    "og:title": `Arhitekta.net`,
   };
 };
 
 // https://remix.run/guides/routing#index-routes
 export default function Index() {
   let data = useLoaderData<IndexData>();
+
   return (
     <>
       <div className="relative z-0">
@@ -68,8 +69,8 @@ export default function Index() {
                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-left">
                   <div className="rounded-md shadow">
                     <a
-                        href=" mailto:jelena@arhitekta.net?subject=Konsultacije%20u%20vezi%20konstrukcije&body=%5Bunesite%20vase%20pitanje%2C%20broj%20parcele%20ili%20zeljenu%20kvadraturu%5D"
-                        className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-500 hover:bg-yellow-700 md:py-4 md:text-lg md:px-10"
+                      href=" mailto:jelena@arhitekta.net?subject=Konsultacije%20u%20vezi%20konstrukcije&body=%5Bunesite%20vase%20pitanje%2C%20broj%20parcele%20ili%20zeljenu%20kvadraturu%5D"
+                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-500 hover:bg-yellow-700 md:py-4 md:text-lg md:px-10"
                     >
                       Zakažite konsultaciju
                     </a>

@@ -12,22 +12,22 @@ const ProjectsSection: FC<{ projects: Project[] }> = ({ projects }) => {
 
           <div className="mt-6 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6">
             {projects?.map((project) => (
-              <article key={project.meta.title} className="group relative ">
+              <article key={project.title} className="group relative ">
                 <div className="relative w-full h-80 bg-white rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
                   <img
-                    src={project.meta.image}
-                    alt={project.meta.description}
+                    src={project.heroImage.url}
+                    alt={project.description}
                     className="w-full h-full object-center object-cover"
                   />
                 </div>
                 <h3 className="mt-6 text-sm text-yellow-500">
                   <a href={`projekti/${project.slug}`}>
                     <span className="absolute inset-0" />
-                    {project.meta.category}
+                    {project.category}
                   </a>
                 </h3>
                 <p className="text-base text-gray-900 max-w-prose truncate">
-                  {project.meta.title}
+                  {project.title}
                 </p>
               </article>
             ))}

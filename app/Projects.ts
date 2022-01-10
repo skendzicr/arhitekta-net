@@ -50,9 +50,8 @@ const GetSingleProjectBySlug = gql`
     }
   }
 `;
-
 const graphcms = new GraphQLClient(
-  "https://api-eu-central-1.graphcms.com/v2/cky92fy3e3d3p01z63svu6183/master"
+  process.env.GRAPH_CMS_URL!
 );
 
 export const getProjects = async (

@@ -4,7 +4,7 @@
   publish = "public"
 
 [functions]
-  included_files = ["projects/**.md","public/assets/**"]
+  included_files = ["public/assets/**"]
   external_node_modules = ["@remix-run/react"]
 [dev]
   command = "remix watch"

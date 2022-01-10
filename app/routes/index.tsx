@@ -1,7 +1,7 @@
 import type { LoaderFunction, MetaFunction } from "remix";
 import { json, useLoaderData } from "remix";
 import ProjectsSection from "../components/ProjectsSection";
-import {getFeaturedProjects, getProjects} from "../Projects";
+import { getFeaturedProjects } from "../Projects";
 import { Project } from "../types";
 import FeaturesSection from "../components/FeaturesSection";
 
@@ -29,7 +29,7 @@ export let meta: MetaFunction = () => {
     description: `Arhitekta.net će vam pomoći u izgradnji od ideje i sna, preko
                 crteža i 3D modela do stvarnosti. Mi smo umetnici sa licencom
                 inženjera.`,
-    "og:image": "/assets/images/prizemna-kuca-6.jpg",
+    "og:image": "https://media.graphcms.com/9n3oLaPnSFmBduPK1jNF",
     "og:description": `Arhitekta.net će vam pomoći u izgradnji od ideje i sna, preko crteža i 3D modela do stvarnosti. Mi smo umetnici sa licencom inženjera.`,
     "og:title": `Arhitekta.net`,
   };
@@ -83,8 +83,8 @@ export default function Index() {
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <img
             className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-            src="assets/images/prizemna-kuca-6.jpg"
-            alt=""
+            src="https://media.graphcms.com/9n3oLaPnSFmBduPK1jNF"
+            alt="Prizemna kuća"
           />
         </div>
       </div>

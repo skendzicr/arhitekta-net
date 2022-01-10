@@ -4,6 +4,7 @@
   publish = "public"
 
 [functions]
+  node_bundler = "esbuild"
   included_files = ["projects/**.md","public/assets/**"]
 
 [dev]

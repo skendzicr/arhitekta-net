@@ -11,12 +11,13 @@ export let loader: LoaderFunction = async ({ params }: any) => {
 
 // https://remix.run/api/conventions#meta
 export let meta: MetaFunction = ({ data }) => {
+  const { project } = data;
   return {
-    title: `${data.title} | Arhitekta.net`,
-    description: data.description,
-    "og:image": data.heroImage,
-    "og:description": data.description,
-    "og:title": `${data.title} | Arhitekta.net`,
+    title: `${project.title} | Arhitekta.net`,
+    description: project.description,
+    "og:image": project.heroImage.url,
+    "og:description": project.description,
+    "og:title": `${project.title} | Arhitekta.net`,
   };
 };
 

@@ -1,10 +1,20 @@
 import Timeline from "../../components/Timeline";
 import { Biography } from "../../types";
-import { useLoaderData } from "remix";
+import {MetaFunction, useLoaderData} from "remix";
 import { getBiography } from "../../Biography";
 
 export let loader = (): Promise<Biography> => {
   return getBiography();
+};
+
+// https://remix.run/api/conventions#meta
+export let meta: MetaFunction = () => {
+  return {
+    title: `Biografija | Arhitekta.net`,
+    description: `Jelena Gutić Skendžić - Diplomirani inženjer arhitekture. Licenca 300.`,
+    "og:description": `Jelena Gutić Skendžić - Diplomirani inženjer arhitekture. Licenca 300.`,
+    "og:title": `Biografija | Arhitekta.net`,
+  };
 };
 
 export default function Biography() {

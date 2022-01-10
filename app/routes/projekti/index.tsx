@@ -1,24 +1,22 @@
-import {Link, MetaFunction, useLoaderData} from "remix";
+import { Link, MetaFunction, useLoaderData } from "remix";
 import { Project } from "../../types";
 import { getProjects } from "../../Projects";
 
-export let loader = (): Promise<Project[]> => {
-  return getProjects();
-};
+export let loader = () => getProjects();
 
 // https://remix.run/api/conventions#meta
 export let meta: MetaFunction = () => {
-    return {
-        title: "Projekti | Arhitekta.net",
-        description: `Poslednji projekti na kojima smo radili zajedno sa našim klijentima i partnerima`,
-        "og:image": "/assets/images/prizemna-kuca-6.jpg",
-        "og:description": `Poslednji projekti na kojima smo radili zajedno sa našim klijentima i partnerima`,
-        "og:title": `Projekti | Arhitekta.net`
-    };
+  return {
+    title: "Projekti | Arhitekta.net",
+    description: `Poslednji projekti na kojima smo radili zajedno sa našim klijentima i partnerima`,
+    "og:image": "https://media.graphcms.com/9n3oLaPnSFmBduPK1jNF",
+    "og:description": `Poslednji projekti na kojima smo radili zajedno sa našim klijentima i partnerima`,
+    "og:title": `Projekti | Arhitekta.net`,
+  };
 };
 
 export default function Projects() {
-  let projects = useLoaderData<Project[]>().sort((a, b) => b.time - a.time);
+  let { projects } = useLoaderData<{ projects: Project[] }>();
   return (
     <section className="bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,22 +27,22 @@ export default function Projects() {
 
           <div className="mt-6 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:gap-y-12">
             {projects?.map((project) => (
-              <article key={project.meta.title} className="group relative">
+              <article key={project.title} className="group relative">
                 <div className="relative w-full h-80 bg-white rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
                   <img
-                    src={project.meta.image}
-                    alt={project.meta.description}
+                    src={project.heroImage.url}
+                    alt={project.description}
                     className="w-full h-full object-center object-cover"
                   />
                 </div>
                 <h3 className="mt-6 text-sm text-gray-500">
                   <Link to={`./${project.slug}`}>
                     <span className="absolute inset-0" />
-                    {project.meta.category}
+                    {project.category}
                   </Link>
                 </h3>
                 <p className="text-base text-gray-900 max-w-prose truncate">
-                  {project.meta.title}
+                  {project.title}
                 </p>
               </article>
             ))}

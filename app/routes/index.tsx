@@ -1,7 +1,7 @@
 import type { LoaderFunction, MetaFunction } from "remix";
 import { json, useLoaderData } from "remix";
 import ProjectsSection from "../components/ProjectsSection";
-import { getProjects } from "../Projects";
+import {getFeaturedProjects, getProjects} from "../Projects";
 import { Project } from "../types";
 import FeaturesSection from "../components/FeaturesSection";
 
@@ -14,7 +14,7 @@ type IndexData = {
 // to the component that renders it.
 // https://remix.run/api/conventions#loader
 export let loader: LoaderFunction = async () => {
-  let { projects } = await getProjects();
+  let { projects } = await getFeaturedProjects(true);
 
   // https://remix.run/api/remix#json
   return json({

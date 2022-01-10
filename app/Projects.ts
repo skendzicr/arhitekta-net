@@ -1,55 +1,67 @@
 import { Project } from "~/types";
-import * as path from "path";
-import * as fs from "fs/promises";
-import parseFrontMatter from "front-matter";
-import { marked } from "marked";
+import { gql, GraphQLClient } from "graphql-request";
 
-// relative to the server output not the source!
-const postsPath = path.join(__dirname, "../../../..", "projects");
-const imagesPath = path.join(__dirname, "../../../..", "public","assets","images")
-
-export const getProjects = async (): Promise<Project[]> => {
-  const projects = await fs.readdir(postsPath);
-  return Promise.all(
-    projects.map(async (filename) => {
-      const fileLocation = path.join(postsPath, filename);
-      const file = await fs.readFile(fileLocation);
-      const time = await fs.stat(fileLocation);
-      const { attributes } = parseFrontMatter<Project>(file.toString());
-      return {
-        ...attributes,
-        slug: filename.replace(/\.md$/, ""),
-        title: attributes.meta.title,
-        time: time.mtime.getTime(),
-      };
-    })
-  );
-};
-
-export const getProject = async (slug: string) => {
-  const filepath = path.join(postsPath, slug + ".md");
-  const file = await fs.readFile(filepath);
-  const { attributes, body } = parseFrontMatter<Project>(file.toString());
-  const html = marked(body);
-  const images = await getProjectImages(slug);
-  return {
-    slug,
-    html,
-    title: attributes.meta.title,
-    description: attributes.meta.description,
-    heroImage: attributes.meta.image,
-    images,
-    category: attributes.meta.category,
-      imagesPath
-  };
-};
-
-export const getProjectImages = async (slug: string) => {
-    try {
-        const files = await fs.readdir(imagesPath);
-        return files.filter((file) => file.includes(slug));
-    } catch (e) {
-        return []
+const GetProjectsQuery = gql`
+  query ProjectsQuery {
+    projects {
+      id
+      title
+      category
+      heroImage {
+        url
+      }
+      slug
+      createdAt
     }
-};
+  }
+`;
 
+const GetFeaturedProjectsQuery = gql`
+  query FeaturedProjectsQuery($featured: Boolean) {
+    projects(where: { featured: $featured }) {
+      id
+      title
+      category
+      heroImage {
+        url
+      }
+      slug
+      createdAt
+    }
+  }
+`;
+
+const GetSingleProjectBySlug = gql`
+  query ProjectPageQuery($slug: String!) {
+    project(where: { slug: $slug }) {
+      id
+      body
+      title
+      category
+      description
+      heroImage {
+        id
+        url
+      }
+      images {
+        id
+        url
+      }
+    }
+  }
+`;
+const graphcms = new GraphQLClient(
+  process.env.GRAPH_CMS_URL!
+);
+
+export const getProjects = async (
+): Promise<{ projects: Project[] }> =>
+  graphcms.request(GetProjectsQuery);
+
+export const getFeaturedProjects = async (
+    featured: boolean | null = null
+): Promise<{ projects: Project[] }> =>
+    graphcms.request(GetFeaturedProjectsQuery, { featured });
+
+export const getProject = async (slug: string): Promise<{ project: Project }> =>
+  graphcms.request(GetSingleProjectBySlug, { slug });

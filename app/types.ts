@@ -1,14 +1,13 @@
 export interface Project {
   time: number;
-  meta: {
-    id: number;
-    image: string;
-    images: Image[];
-    description: string;
-    title: string;
-    category: string;
-  };
+  id: number;
+  heroImage: { url:string };
+  images: { url:string, id:string }[];
+  description: string;
+  title: string;
+  category: string;
   slug: string;
+  body:string;
 }
 
 export interface Biography {
@@ -23,10 +22,4 @@ export interface Biography {
     endYear: number;
     startYear: number;
   }[];
-}
-
-interface Image {
-  small?: string;
-  medium?: string;
-  big?: string;
 }

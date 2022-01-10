@@ -1,24 +1,27 @@
-import {LoaderFunction, MetaFunction, useLoaderData} from "remix";
+import { json, LoaderFunction, MetaFunction, useLoaderData } from "remix";
 import { getProject } from "../../Projects";
 import Artwork from "../../components/Artwork";
+import { Project } from "~/types";
+import { marked } from "marked";
 
 export let loader: LoaderFunction = async ({ params }: any) => {
-  return getProject(params.slug);
+  let { project } = await getProject(params.slug);
+  return json({ project: { ...project, body: marked(project.body) } });
 };
 
 // https://remix.run/api/conventions#meta
-export let meta: MetaFunction = ({data}) => {
+export let meta: MetaFunction = ({ data }) => {
   return {
     title: `${data.title} | Arhitekta.net`,
     description: data.description,
     "og:image": data.heroImage,
     "og:description": data.description,
-    "og:title": `${data.title} | Arhitekta.net`
+    "og:title": `${data.title} | Arhitekta.net`,
   };
 };
 
 export default function ProjectSlug() {
-  const project = useLoaderData();
+  const { project } = useLoaderData<{ project: Project }>();
   return (
     <section className="bg-white rounded p-6 md:p-7 lg:p-9">
       <div className="max-w-2xl mx-auto py-16 sm:py-24 lg:max-w-5xl">
@@ -28,22 +31,22 @@ export default function ProjectSlug() {
         </h1>
         <article
           className="prose lg:prose-xl mx-auto mt-4 md:mt-6"
-          dangerouslySetInnerHTML={{ __html: project.html }}
+          dangerouslySetInnerHTML={{ __html: project.body }}
         ></article>
         <section className="overflow-hidden text-gray-700">
           <div className="container px-5 py-2 mx-auto lg:pt-24 lg:px-32">
             <div className="flex flex-wrap -m-1 md:-m-2">
-              {project.images.map((image: string) => (
+              {project.images.map((image) => (
                 <div
                   className="flex flex-wrap w-1/3 cursor-pointer"
-                  key={image}
+                  key={image.id}
                 >
                   <div className="w-full aspect-video p-1 md:p-2">
-                    <Artwork source={`/assets/images/${image}`}>
+                    <Artwork source={image.url}>
                       <img
-                        alt={image}
+                        alt={image.url}
                         className="block object-fill object-center w-full h-full rounded-lg hover:scale-110 hover:opacity-50"
-                        src={`/assets/images/${image}`}
+                        src={image.url}
                       />
                     </Artwork>
                   </div>

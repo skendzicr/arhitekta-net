@@ -29,6 +29,9 @@ export let meta: MetaFunction = () => {
     description: `Arhitekta.net će vam pomoći u izgradnji od ideje i sna, preko
                 crteža i 3D modela do stvarnosti. Mi smo umetnici sa licencom
                 inženjera.`,
+    "og:image": "/assets/images/prizemna-kuca-6.jpg",
+    "og:description": `Arhitekta.net će vam pomoći u izgradnji od ideje i sna, preko crteža i 3D modela do stvarnosti. Mi smo umetnici sa licencom inženjera.`,
+    "og:title": `Arhitekta.net`
   };
 };
 

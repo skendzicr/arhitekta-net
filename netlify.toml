@@ -4,7 +4,7 @@
   publish = "public"
 
 [functions]
-  included_files = ["projects/**","images/**"]
+  included_files = ["projects/**.md","public/assets/**"]
 
 [dev]
   command = "remix watch"

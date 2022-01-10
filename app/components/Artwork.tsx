@@ -55,7 +55,7 @@ const Artwork: FC<{ source: string }> = ({ children, source }) => {
         ref={popperElement}
         style={styles.popper}
         {...attributes.popper}
-        className={`max-w-prose w-full border-[1px] bg-white border-gray-200 p-4 ${
+        className={`max-w-prose w-full border-[1px] bg-yellow-50 border-gray-200 p-4 ${
           isVisible ? "visible" : "hidden"
         } rounded`}
       >
@@ -64,7 +64,7 @@ const Artwork: FC<{ source: string }> = ({ children, source }) => {
           id="arrow"
           ref={arrowElement}
           style={arrowStyles}
-          className="bg-white -bottom-2 w-4 h-4 absolute border-solid border-gray-200"
+          className="bg-yellow-50 -bottom-2 w-4 h-4 absolute border-solid border-gray-200"
         />
       </div>
     </>

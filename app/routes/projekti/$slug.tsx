@@ -1,9 +1,20 @@
-import { LoaderFunction, useLoaderData } from "remix";
+import {LoaderFunction, MetaFunction, useLoaderData} from "remix";
 import { getProject } from "../../Projects";
 import Artwork from "../../components/Artwork";
 
 export let loader: LoaderFunction = async ({ params }: any) => {
   return getProject(params.slug);
+};
+
+// https://remix.run/api/conventions#meta
+export let meta: MetaFunction = ({data}) => {
+  return {
+    title: `${data.title} | Arhitekta.net`,
+    description: data.description,
+    "og:image": data.heroImage,
+    "og:description": data.description,
+    "og:title": `${data.title} | Arhitekta.net`
+  };
 };
 
 export default function ProjectSlug() {

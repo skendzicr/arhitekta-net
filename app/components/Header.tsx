@@ -52,20 +52,20 @@ const Header = () => (
         <Popover.Panel
           focus
           className="fixed z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
-        >
+        >{({close})=>(
           <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
             <div className="px-5 pt-4 flex items-center justify-between">
               <Logo />
               <div className="-mr-2">
                 <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                  <span className="sr-only">Close main menu</span>
+                  <span className="sr-only">Zatvori navigaciju</span>
                   <XIcon className="h-6 w-6" aria-hidden="true" />
                 </Popover.Button>
               </div>
             </div>
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <TailwindLink to={"/projekti"} linkText={"Projekti"} />
-              <TailwindLink to={"/biografija"} linkText={"Biografija"} />
+              <TailwindLink to={"/projekti"} linkText={"Projekti"} onClick={close}  />
+              <TailwindLink to={"/biografija"} linkText={"Biografija"} onClick={close} />
               <a
                 href=" mailto:jelena@arhitekta.net?subject=Konsultacije%20u%20vezi%20konstrukcije&body=%5Bunesite%20vase%20pitanje%2C%20broj%20parcele%20ili%20zeljenu%20kvadraturu%5D "
                 className="block px-3 py-2 rounded-md text-base text-gray-700 hover:text-gray-900 hover:bg-gray-50 font-thin"
@@ -74,6 +74,7 @@ const Header = () => (
               </a>
             </div>
           </div>
+        )}
         </Popover.Panel>
       </Transition>
     </Popover>

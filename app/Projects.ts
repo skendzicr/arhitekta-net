@@ -6,7 +6,7 @@ import { marked } from "marked";
 
 // relative to the server output not the source!
 const postsPath = path.join(__dirname, "../../../..", "projects");
-const imagesPath = path.join(__dirname, "../../../..", "images");
+const imagesPath = path.join(__dirname, "../../../..", "public","assets","images")
 
 export const getProjects = async (): Promise<Project[]> => {
   const projects = await fs.readdir(postsPath);
@@ -36,13 +36,20 @@ export const getProject = async (slug: string) => {
     slug,
     html,
     title: attributes.meta.title,
+    description: attributes.meta.description,
+    heroImage: attributes.meta.image,
     images,
     category: attributes.meta.category,
+      imagesPath
   };
 };
 
 export const getProjectImages = async (slug: string) => {
-  const files = await fs.readdir(imagesPath);
-  return files.filter((file) => file.includes(slug));
+    try {
+        const files = await fs.readdir(imagesPath);
+        return files.filter((file) => file.includes(slug));
+    } catch (e) {
+        return []
+    }
 };
 

@@ -1,9 +1,20 @@
-import { Link, useLoaderData } from "remix";
+import {Link, MetaFunction, useLoaderData} from "remix";
 import { Project } from "../../types";
 import { getProjects } from "../../Projects";
 
 export let loader = (): Promise<Project[]> => {
   return getProjects();
+};
+
+// https://remix.run/api/conventions#meta
+export let meta: MetaFunction = () => {
+    return {
+        title: "Projekti | Arhitekta.net",
+        description: `Poslednji projekti na kojima smo radili zajedno sa našim klijentima i partnerima`,
+        "og:image": "/assets/images/prizemna-kuca-6.jpg",
+        "og:description": `Poslednji projekti na kojima smo radili zajedno sa našim klijentima i partnerima`,
+        "og:title": `Projekti | Arhitekta.net`
+    };
 };
 
 export default function Projects() {

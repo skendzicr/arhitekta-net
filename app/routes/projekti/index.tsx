@@ -9,7 +9,7 @@ export let meta: MetaFunction = () => {
   return {
     title: "Projekti | Arhitekta.net",
     description: `Poslednji projekti na kojima smo radili zajedno sa našim klijentima i partnerima`,
-    "og:image": "https://media.graphcms.com/9n3oLaPnSFmBduPK1jNF",
+    "og:image": "https://media.graphcms.com/output=format:webp/9n3oLaPnSFmBduPK1jNF",
     "og:description": `Poslednji projekti na kojima smo radili zajedno sa našim klijentima i partnerima`,
     "og:title": `Projekti | Arhitekta.net`,
   };

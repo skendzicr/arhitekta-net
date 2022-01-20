@@ -69,7 +69,7 @@ export default function Index() {
                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-left">
                   <div className="rounded-md shadow">
                     <a
-                      href=" mailto:jelena@arhitekta.net?subject=Konsultacije%20u%20vezi%20konstrukcije&body=%5Bunesite%20vase%20pitanje%2C%20broj%20parcele%20ili%20zeljenu%20kvadraturu%5D"
+                      href="mailto:jelena@arhitekta.net?subject=Konsultacije%20u%20vezi%20konstrukcije&body=%5Bunesite%20vase%20pitanje%2C%20broj%20parcele%20ili%20zeljenu%20kvadraturu%5D"
                       className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-500 hover:bg-yellow-700 md:py-4 md:text-lg md:px-10"
                     >
                       Zakažite konsultaciju
@@ -83,7 +83,7 @@ export default function Index() {
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <img
             className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-            src="https://media.graphcms.com/9n3oLaPnSFmBduPK1jNF"
+            src="https://media.graphcms.com/output=format:webp/9n3oLaPnSFmBduPK1jNF"
             alt="Prizemna kuća"
           />
         </div>

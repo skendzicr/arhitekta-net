@@ -23,7 +23,7 @@ const GetFeaturedProjectsQuery = gql`
       title
       category
       heroImage {
-        url
+        url(transformation: { document: { output: { format: webp } } })
       }
       slug
       createdAt
@@ -45,23 +45,20 @@ const GetSingleProjectBySlug = gql`
       }
       images {
         id
-        url
+        url(transformation: { document: { output: { format: webp } } })
       }
     }
   }
 `;
-const graphcms = new GraphQLClient(
-  process.env.GRAPH_CMS_URL!
-);
+const graphcms = new GraphQLClient(process.env.GRAPH_CMS_URL!);
 
-export const getProjects = async (
-): Promise<{ projects: Project[] }> =>
+export const getProjects = async (): Promise<{ projects: Project[] }> =>
   graphcms.request(GetProjectsQuery);
 
 export const getFeaturedProjects = async (
-    featured: boolean | null = null
+  featured: boolean | null = null
 ): Promise<{ projects: Project[] }> =>
-    graphcms.request(GetFeaturedProjectsQuery, { featured });
+  graphcms.request(GetFeaturedProjectsQuery, { featured });
 
 export const getProject = async (slug: string): Promise<{ project: Project }> =>
   graphcms.request(GetSingleProjectBySlug, { slug });

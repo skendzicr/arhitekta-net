@@ -16,11 +16,6 @@ import Header from "./components/Header";
 export function links() {
   return [
     { rel: "stylesheet", href: styles },
-    {
-      rel: "stylesheet",
-      href: "https://rsms.me/inter/inter.css",
-      crossOrigin: "true",
-    },
   ];
 }
 

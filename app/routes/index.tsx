@@ -4,6 +4,8 @@ import ProjectsSection from "../components/ProjectsSection";
 import { getFeaturedProjects } from "../Projects";
 import { Project } from "../types";
 import FeaturesSection from "../components/FeaturesSection";
+import styles from "~/styles/global.css";
+import GraphImage from "@graphcms/react-image";
 
 type IndexData = {
   projects: Project[];
@@ -34,6 +36,16 @@ export let meta: MetaFunction = () => {
     "og:title": `Arhitekta.net`,
   };
 };
+
+export function links() {
+  return [
+    {
+      rel: "stylesheet",
+      href: "https://rsms.me/inter/inter.css",
+      crossOrigin: "true",
+    },
+  ];
+}
 
 // https://remix.run/guides/routing#index-routes
 export default function Index() {
@@ -83,7 +95,7 @@ export default function Index() {
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <img
             className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-            src="https://media.graphcms.com/output=format:webp/9n3oLaPnSFmBduPK1jNF"
+            src="https://media.graphcms.com/resize=fit:scale,width:720/output=format:webp/9n3oLaPnSFmBduPK1jNF"
             alt="Prizemna kuća"
           />
         </div>

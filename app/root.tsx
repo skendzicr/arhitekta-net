@@ -14,7 +14,14 @@ import Header from "./components/Header";
 
 // https://remix.run/api/app#links
 export function links() {
-  return [{ rel: "stylesheet", href: styles }];
+  return [
+    { rel: "stylesheet", href: styles },
+    {
+      rel: "stylesheet",
+      href: "https://rsms.me/inter/inter.css",
+      crossOrigin: "true",
+    },
+  ];
 }
 
 // https://remix.run/api/conventions#default-export

@@ -1,7 +1,7 @@
 export interface Project {
   time: number;
   id: number;
-  heroImage: { url:string };
+  heroImage: { url:string, handle:string };
   images: { url:string, id:string }[];
   description: string;
   title: string;

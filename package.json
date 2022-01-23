@@ -9,6 +9,7 @@
     "postinstall": "remix setup node"
   },
   "dependencies": {
+    "@graphcms/react-image": "^1.0.1",
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
     "@netlify/functions": "^0.10.0",

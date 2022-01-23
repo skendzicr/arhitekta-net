@@ -1,15 +1,16 @@
 import { FC } from "react";
 import { Link, NavLink } from "remix";
 
-const TailwindLink: FC<{ to: string; linkText: string, onClick?:()=>void }> = ({
-  to,
-  linkText,
-    onClick
-}) => {
+const TailwindLink: FC<{
+  to: string;
+  linkText: string;
+  onClick?: () => void;
+}> = ({ to, linkText, onClick }) => {
   const baseClasses = `block px-3 py-2 rounded-md text-base`;
   return (
     <NavLink
-        onClick={onClick}
+      onClick={onClick}
+      prefetch="intent"
       to={to}
       className={({ isActive }) =>
         isActive

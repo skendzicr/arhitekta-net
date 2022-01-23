@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Project } from "../types";
+import GraphImage from "@graphcms/react-image";
 
 const ProjectsSection: FC<{ projects: Project[] }> = ({ projects }) => {
   return (
@@ -14,10 +15,15 @@ const ProjectsSection: FC<{ projects: Project[] }> = ({ projects }) => {
             {projects?.map((project) => (
               <article key={project.title} className="group relative ">
                 <div className="relative w-full h-80 bg-white rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                  <img
-                    src={project.heroImage.url}
+                  <GraphImage
+                    image={{
+                      handle: project.heroImage.handle,
+                      width: 800,
+                      height: 800,
+                    }}
+                    maxWidth={800}
+                    withWebp={true}
                     alt={project.description}
-                    className="w-full h-full object-center object-cover"
                   />
                 </div>
                 <h3 className="mt-6 text-sm text-yellow-500">

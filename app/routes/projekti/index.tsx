@@ -2,6 +2,7 @@ import { Link, MetaFunction, useLoaderData } from "remix";
 import { Project } from "../../types";
 import { getProjects } from "../../Projects";
 
+
 export let loader = () => getProjects();
 
 // https://remix.run/api/conventions#meta

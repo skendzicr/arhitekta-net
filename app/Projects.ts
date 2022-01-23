@@ -24,6 +24,7 @@ const GetFeaturedProjectsQuery = gql`
       category
       heroImage {
         url(transformation: { document: { output: { format: webp } } })
+        handle
       }
       slug
       createdAt
@@ -41,7 +42,7 @@ const GetSingleProjectBySlug = gql`
       description
       heroImage {
         id
-        url
+        url(transformation: { document: { output: { format: webp } } })
       }
       images {
         id

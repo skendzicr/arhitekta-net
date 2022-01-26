@@ -1,11 +1,9 @@
-import type { LoaderFunction, MetaFunction } from "remix";
-import { json, useLoaderData } from "remix";
+import type {HeadersFunction, LoaderFunction, MetaFunction} from "remix";
+import {json, useLoaderData} from "remix";
 import ProjectsSection from "../components/ProjectsSection";
-import { getFeaturedProjects } from "../Projects";
-import { Project } from "../types";
+import {getFeaturedProjects} from "../Projects";
+import {Project} from "../types";
 import FeaturesSection from "../components/FeaturesSection";
-import styles from "~/styles/global.css";
-import GraphImage from "@graphcms/react-image";
 
 type IndexData = {
   projects: Project[];
@@ -23,6 +21,12 @@ export let loader: LoaderFunction = async () => {
     projects,
   });
 };
+
+export let headers:HeadersFunction = () => {
+  return {
+    "Cache-Control": "max-age=86400, s-maxage=86400"
+  }
+}
 
 // https://remix.run/api/conventions#meta
 export let meta: MetaFunction = () => {
@@ -43,6 +47,14 @@ export function links() {
       rel: "stylesheet",
       href: "https://rsms.me/inter/inter.css",
       crossOrigin: "true",
+    },
+    // prefetch an image into the browser cache that the user is likely to see
+    // as they interact with this page, perhaps they click a button to reveal in
+    // a summary/details element
+    {
+      rel: "prefetch",
+      as: "image",
+      href: "https://media.graphcms.com/resize=fit:scale,width:720/output=format:webp/9n3oLaPnSFmBduPK1jNF"
     },
   ];
 }
@@ -97,6 +109,9 @@ export default function Index() {
             className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
             src="https://media.graphcms.com/resize=fit:scale,width:720/output=format:webp/9n3oLaPnSFmBduPK1jNF"
             alt="Prizemna kuća"
+            width={680}
+            height={680}
+            loading='eager'
           />
         </div>
       </div>

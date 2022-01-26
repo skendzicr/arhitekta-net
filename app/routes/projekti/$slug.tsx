@@ -45,6 +45,7 @@ export default function ProjectSlug() {
                   <div className="w-full aspect-video p-1 md:p-2">
                     <Artwork source={image.url}>
                       <img
+                          loading='lazy'
                         alt={image.url}
                         className="block object-fill object-center w-full h-full rounded-lg hover:scale-110 hover:opacity-50"
                         src={image.url}

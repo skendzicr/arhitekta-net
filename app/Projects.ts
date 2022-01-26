@@ -8,7 +8,8 @@ const GetProjectsQuery = gql`
       title
       category
       heroImage {
-         url(transformation: { document: { output: { format: webp } } })
+        url(transformation: { document: { output: { format: webp } } })
+        handle
       }
       slug
       createdAt

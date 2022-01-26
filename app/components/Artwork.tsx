@@ -59,7 +59,7 @@ const Artwork: FC<{ source: string }> = ({ children, source }) => {
           isVisible ? "visible" : "hidden"
         } rounded`}
       >
-        <img src={source} />
+        <img src={source} alt='image gallery' width={480} height={480} />
         <div
           id="arrow"
           ref={arrowElement}

@@ -32,7 +32,7 @@ export default function Biography() {
               Diplomirani inženjer arhitekture. Odgovorni projektant
               arhitektonskih projekata, uređenja slobodnih prostora i
               unutrašnjih instalacija vodovoda i kanalizacije -{" "}
-              <span className="text-yellow-500"> Licenca 300.</span>
+              <span className="text-pink-600"> Licenca 300.</span>
             </p>
           </div>
         </div>
@@ -42,7 +42,7 @@ export default function Biography() {
         <h3>Obrazovanje</h3>
         <p>
           Arhitektonski fakultet Univerziteta u Beogradu,&nbsp;
-          <span className="text-yellow-500">
+          <span className="text-pink-600">
             smer Arhitektonsko inženjerstvo.
           </span>
         </p>

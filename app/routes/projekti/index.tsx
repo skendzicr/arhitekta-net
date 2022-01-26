@@ -41,12 +41,12 @@ export default function Projects() {
                   alt={project.description}
                   className='w-full h-full object-center object-cover rounded-lg group-hover:opacity-75  sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1'
                 />
-                <h3 className="mt-6 text-sm text-gray-500">
+                <h2 className="mt-6 text-sm text-gray-500">
                   <Link to={`./${project.slug}`}>
                     <span className="absolute inset-0" />
                     {project.category}
                   </Link>
-                </h3>
+                </h2>
                 <p className="text-base text-gray-900 max-w-prose truncate">
                   {project.title}
                 </p>

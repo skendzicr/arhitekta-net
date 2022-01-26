@@ -46,9 +46,9 @@ const FeaturesSection: FC<{}> = ({}) => {
             />
           </div>
           <div className="w-full md:w-1/4 md:pl-10 order-1 md:order-none ">
-            <h4 className="text-3xl text-gray-800 font-bold my-3">
+            <h3 className="text-3xl text-gray-800 font-bold my-3">
               Idejno rešenje
-            </h4>
+            </h3>
             <p className="text-gray-600">
               Kao rezultat izrade Idejnog rešenja (IDR), dobijaju se sledeći
               grafički prilozi: šira i uža situacija objekta, osnove svih
@@ -90,9 +90,9 @@ const FeaturesSection: FC<{}> = ({}) => {
           </div>
 
           <div className="w-full md:w-1/4 md:pl-10 order-1 md:order-none">
-            <h4 className="text-3xl text-gray-800 font-bold my-3">
+            <h3 className="text-3xl text-gray-800 font-bold my-3">
               Projektovanje objekata
-            </h4>
+            </h3>
             <p className="text-gray-600 mb-8">
               Izrada fotorealističnih 3D modela, kako biste na najjeftiniji
               način proverili sve potencijalne odluke koje želite da sprovedete
